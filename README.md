@@ -1,7 +1,7 @@
 <div align="left">
 
-[简体中文](./README_cn.md) | [हिंदी](./README_hi.md)
-|[Português](./README_pt.md) | [Indonesian](./README_id.md) | English | [Türkçe](./README_tr.md)
+[简体中文](README_cn.md) | [हिंदी](README_hi.md)
+|[Português](README_pt.md) | [Indonesian](README_id.md) | English | [Türkçe](README_tr.md)
 
 </div>
 
@@ -197,49 +197,49 @@ Make sure that you have installed yarn and git
 
 | Language(A-Z)   | Code  | View                                    |
 | --------------- | ----- | --------------------------------------- |
-| Amharic         | am    | [View](./src/assets/locales/am.json)    |
-| Arabic          | ar    | [View](./src/assets/locales/ar.json)    |
-| Armenian        | hy    | [View](./src/assets/locales/hy.json)    |
-| Bengali         | bn    | [View](./src/assets/locales/bn.json)    |
-| Bulgarian       | bg    | [View](./src/assets/locales/bg.json)    |
-| Chinese (CN)    | zh-CN | [View](./src/assets/locales/zh-CN.json) |
-| Chinese (MO)    | zh-MO | [View](./src/assets/locales/zh-MO.json) |
-| Chinese (TW)    | zh-TW | [View](./src/assets/locales/zh-TW.json) |
-| Czech           | cs    | [View](./src/assets/locales/cs.json)    |
-| Danish          | da    | [View](./src/assets/locales/da.json)    |
-| Dutch           | nl    | [View](./src/assets/locales/nl.json)    |
-| English         | en    | [View](./src/assets/locales/en.json)    |
-| Finnish         | fi    | [View](./src/assets/locales/fi.json)    |
-| French          | fr    | [View](./src/assets/locales/fr.json)    |
-| German          | de    | [View](./src/assets/locales/de.json)    |
-| Greek           | el    | [View](./src/assets/locales/el.json)    |
-| Hindi           | hi    | [View](./src/assets/locales/hi.json)    |
-| Hungarian       | hu    | [View](./src/assets/locales/hu.json)    |
-| Indonesian      | id    | [View](./src/assets/locales/id.json)    |
-| Interlingue     | ie    | [View](./src/assets/locales/ie.json)    |
-| Irish           | ga    | [View](./src/assets/locales/ga.json)    |
-| Italian         | it    | [View](./src/assets/locales/it.json)    |
-| Japanese        | ja    | [View](./src/assets/locales/ja.json)    |
-| Korean          | ko    | [View](./src/assets/locales/ko.json)    |
-| Persian         | fa    | [View](./src/assets/locales/fa.json)    |
-| Polish          | pl    | [View](./src/assets/locales/pl.json)    |
-| Portuguese      | pt    | [View](./src/assets/locales/pt.json)    |
-| Portuguese (BR) | pt-BR | [View](./src/assets/locales/pt-BR.json) |
-| Romanian        | ro    | [View](./src/assets/locales/ro.json)    |
-| Russian         | ru    | [View](./src/assets/locales/ru.json)    |
-| Slovenian       | sl    | [View](./src/assets/locales/sl.json)    |
-| Spanish         | es    | [View](./src/assets/locales/es.json)    |
-| Swedish         | sv    | [View](./src/assets/locales/sv.json)    |
-| Tamil           | ta    | [View](./src/assets/locales/ta.json)    |
-| Thai            | th    | [View](./src/assets/locales/th.json)    |
-| Tagalog         | tl    | [View](./src/assets/locales/tl.json)    |
-| Tibetan         | bo    | [View](./src/assets/locales/bo.json)    |
-| Turkish         | tr    | [View](./src/assets/locales/tr.json)    |
-| Ukrainian       | uk    | [View](./src/assets/locales/uk.json)    |
-| Vietnamese      | vi    | [View](./src/assets/locales/vi.json)    |
+| Amharic         | am    | [View](src/assets/locales/am.json)    |
+| Arabic          | ar    | [View](src/assets/locales/ar.json)    |
+| Armenian        | hy    | [View](src/assets/locales/hy.json)    |
+| Bengali         | bn    | [View](src/assets/locales/bn.json)    |
+| Bulgarian       | bg    | [View](src/assets/locales/bg.json)    |
+| Chinese (CN)    | zh-CN | [View](src/assets/locales/zh-CN.json) |
+| Chinese (MO)    | zh-MO | [View](src/assets/locales/zh-MO.json) |
+| Chinese (TW)    | zh-TW | [View](src/assets/locales/zh-TW.json) |
+| Czech           | cs    | [View](src/assets/locales/cs.json)    |
+| Danish          | da    | [View](src/assets/locales/da.json)    |
+| Dutch           | nl    | [View](src/assets/locales/nl.json)    |
+| English         | en    | [View](src/assets/locales/en.json)    |
+| Finnish         | fi    | [View](src/assets/locales/fi.json)    |
+| French          | fr    | [View](src/assets/locales/fr.json)    |
+| German          | de    | [View](src/assets/locales/de.json)    |
+| Greek           | el    | [View](src/assets/locales/el.json)    |
+| Hindi           | hi    | [View](src/assets/locales/hi.json)    |
+| Hungarian       | hu    | [View](src/assets/locales/hu.json)    |
+| Indonesian      | id    | [View](src/assets/locales/id.json)    |
+| Interlingue     | ie    | [View](src/assets/locales/ie.json)    |
+| Irish           | ga    | [View](src/assets/locales/ga.json)    |
+| Italian         | it    | [View](src/assets/locales/it.json)    |
+| Japanese        | ja    | [View](src/assets/locales/ja.json)    |
+| Korean          | ko    | [View](src/assets/locales/ko.json)    |
+| Persian         | fa    | [View](src/assets/locales/fa.json)    |
+| Polish          | pl    | [View](src/assets/locales/pl.json)    |
+| Portuguese      | pt    | [View](src/assets/locales/pt.json)    |
+| Portuguese (BR) | pt-BR | [View](src/assets/locales/pt-BR.json) |
+| Romanian        | ro    | [View](src/assets/locales/ro.json)    |
+| Russian         | ru    | [View](src/assets/locales/ru.json)    |
+| Slovenian       | sl    | [View](src/assets/locales/sl.json)    |
+| Spanish         | es    | [View](src/assets/locales/es.json)    |
+| Swedish         | sv    | [View](src/assets/locales/sv.json)    |
+| Tamil           | ta    | [View](src/assets/locales/ta.json)    |
+| Thai            | th    | [View](src/assets/locales/th.json)    |
+| Tagalog         | tl    | [View](src/assets/locales/tl.json)    |
+| Tibetan         | bo    | [View](src/assets/locales/bo.json)    |
+| Turkish         | tr    | [View](src/assets/locales/tr.json)    |
+| Ukrainian       | uk    | [View](src/assets/locales/uk.json)    |
+| Vietnamese      | vi    | [View](src/assets/locales/vi.json)    |
 
 ### Add new language
 
-1. If you can't find your target language from the above list, download the English source file from [this link](./src/assets/locales/en.json).
+1. If you can't find your target language from the above list, download the English source file from [this link](src/assets/locales/en.json).
 
 2. When you're finished translating, submit the source file to [this link](https://github.com/koodo-reader/koodo-reader/issues/new?assignees=&labels=submit+translation&projects=&template=submit_translation.yml). Pull requests are also welcome.

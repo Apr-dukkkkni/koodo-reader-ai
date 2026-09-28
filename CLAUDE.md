@@ -11,13 +11,13 @@ Koodo Reader 是一个跨平台电子书阅读器（Electron + React CRA + Redux
 | 层 | 位置 | 职责 |
 |---|------|------|
 | Electron 主进程 | `main.js` | IPC handlers, SQLite (better-sqlite3), 云同步, 原生集成 |
-| React 渲染进程 | `src/` | UI, Redux 状态管理, 书籍渲染 |
+| React 渲染进程 | `../HelloWorld/src` | UI, Redux 状态管理, 书籍渲染 |
 | 阅读引擎 | `src/assets/lib/kookit-extra.min.mjs` | 闭源 ESM — 书籍解析、SQL 语句、同步工具 |
-| Go HTTP 服务 | `httpserver/` | 可选的 KOReader / OPDS 集成 |
+| Go HTTP 服务 | `httpserver` | 可选的 KOReader / OPDS 集成 |
 
 ## 重要提醒
 
-**不要**尝试读取 `src/assets/lib/` 下的这些文件：
+**不要**尝试读取 `src/assets/lib` 下的这些文件：
 - `kookit-extra.min.mjs`
 - `kookit.min.js`
 - `kookit-extra-browser.min.js`
@@ -37,7 +37,7 @@ Koodo Reader 是一个跨平台电子书阅读器（Electron + React CRA + Redux
 
 `book`, `reader`, `manager`, `viewArea`, `backupPage`, `sidebar`, `progressPanel`
 
-每个切片在 `src/store/actions/` 和 `src/store/reducers/` 中各有一个文件。
+每个切片在 `src/store/actions` 和 `src/store/reducers/` 中各有一个文件。
 
 ### Redux State 类型
 
@@ -45,7 +45,7 @@ Koodo Reader 是一个跨平台电子书阅读器（Electron + React CRA + Redux
 
 ### Container 模式
 
-`index.tsx` (Redux connect) → `component.tsx` → `interface.tsx`，位于 `src/containers/` 下。
+`index.tsx` (Redux connect) → `component.tsx` → `interface.tsx`，位于 `src/containers` 下。
 
 ### 页面路由
 
@@ -90,7 +90,7 @@ yarn rebuild
 - 状态类型用 `stateType`（`src/store/index.tsx`）
 - 不要从渲染进程直接操作 SQLite，所有数据库操作通过 `database-command` IPC
 - 新增 i18n key 需在 `src/assets/locales/en.json` 中添加
-- Reader 工具函数（`src/utils/reader/`）会影响 iframe 中书籍渲染，修改后需手动回归测试
+- Reader 工具函数（`src/utils/reader`）会影响 iframe 中书籍渲染，修改后需手动回归测试
 - 添加窗口打开通道时需遵循 `new-tab` → `WebContentsView` / `open-book` → `BrowserWindow` 模式
 - 所有 IPC 参数需校验后再执行文件系统/数据库/Shell 操作
 - 不要将令牌、密码或完整书籍路径记录到 info 级别日志

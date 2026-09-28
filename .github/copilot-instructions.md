@@ -34,7 +34,7 @@
 
 - Changes to `src/utils/reader/` (live iframe rendering) require manual verification for layout regressions
 - New IPC handlers must handle error paths; do not silently swallow failures
-- New i18n keys in `en.json` must have corresponding `t()` call sites in `src/`
+- New i18n keys in `en.json` must have corresponding `t()` call sites in `../../HelloWorld/src`
 
 ---
 
@@ -45,7 +45,7 @@ Koodo Reader is an **Electron + React (CRA) + Redux** cross-platform ebook reade
 | Layer | Location | Role |
 | ----- | -------- | ---- |
 | Electron main | `main.js` | IPC handlers, SQLite via `better-sqlite3`, cloud sync, native integrations |
-| React renderer | `src/` | UI, Redux state, book rendering |
+| React renderer | `../../HelloWorld/src` | UI, Redux state, book rendering |
 | Reader engine | `src/assets/lib/kookit-extra.min.mjs` | Closed-source ESM — book parsing, SQL statements, sync utilities |
 | HTTP server | `httpserver/` | Optional Go server for KOReader / OPDS integration |
 

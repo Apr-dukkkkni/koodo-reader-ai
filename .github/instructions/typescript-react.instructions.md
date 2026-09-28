@@ -6,7 +6,7 @@ applyTo: "src/**/*.{ts,tsx}"
 
 ## Purpose
 
-Review rules for the React renderer, Redux store, components, and reader utilities under `src/`.
+Review rules for the React renderer, Redux store, components, and reader utilities under `../../../HelloWorld/src`.
 
 ## Type Safety
 

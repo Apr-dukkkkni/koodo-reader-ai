@@ -23,19 +23,26 @@ import { openExternalUrl } from "../../../utils/common";
 import { createHighlight } from "../../../utils/reader/noteUtil";
 import { Tooltip } from "react-tooltip";
 
-declare var window: any;
+declare var window: any; //`declare`：TS 关键字，**声明存在某个变量 / 类型，不生成 JS 代码**。
+//1. `var window`：声明全局变量名字叫 window。
+// 2. `: any`：把这个 window 的类型标记为`any`，意味着**关闭 window 的类型校验**，window 上随便加属性、随便访问，TS 不会警告
+
+
 
 class PopupOption extends React.Component<PopupOptionProps> {
   highlightUtil: any;
+  //类里面的**实例成员变量**（属性名），后面实例可以用 `this.highlightUtil` 访问
+  //`: any`：类型注解，代表**这个变量任意类型，关闭 TS 类型检查**
   constructor(props: PopupOptionProps) {
     super(props);
     this.highlightUtil = new HighlightUtil(ConfigService);
+
   }
-  handleNote = () => {
+  handleNote = () => { //笔记弹窗
     this.props.handleMenuMode("note");
     this.props.handleOpenMenu(true);
   };
-  handleCopy = () => {
+  handleCopy = () => {   //复制
     const format = this.props.currentBook.format;
     let text = getSelection(format);
     if (!text) return;
@@ -67,11 +74,16 @@ class PopupOption extends React.Component<PopupOptionProps> {
     }
     toast.success(this.props.t("Copying successful"));
   };
+
+  //翻译
   handleTrans = () => {
     this.props.handleMenuMode("trans");
     this.props.handleOriginalText(getSelection(this.props.currentBook.format));
     this.props.handleOpenMenu(true);
   };
+
+
+  //词典
   handleDict = () => {
     this.props.handleMenuMode("dict");
     this.props.handleOriginalText(getSelection(this.props.currentBook.format));
@@ -80,6 +92,9 @@ class PopupOption extends React.Component<PopupOptionProps> {
     );
     this.props.handleOpenMenu(true);
   };
+
+
+  //高亮
   handleDigest = async () => {
     await createHighlight({
       currentBook: this.props.currentBook,
@@ -97,14 +112,22 @@ class PopupOption extends React.Component<PopupOptionProps> {
     });
   };
 
+
+  //点击高亮部分弹出笔记窗口
   handleNoteClick = (event: Event) => {
     this.props.handleNoteKey((event.target as any).dataset.key);
     this.props.handleMenuMode("note");
     this.props.handleOpenMenu(true);
   };
+
+
+  //工具方法
   handleJump = (url: string) => {
     openExternalUrl(url);
   };
+
+
+  //联网搜索
   handleSearchInternet = () => {
     switch (ConfigService.getReaderConfig("searchEngine")) {
       case "google":
@@ -172,11 +195,16 @@ class PopupOption extends React.Component<PopupOptionProps> {
         break;
     }
   };
+
+
+  //书内检索
   handleSearchBook = () => {
     searchInTheBook("", this.props.currentBook.format, true);
     this.props.handleOpenMenu(false);
   };
 
+
+  //朗读选中文字
   handleSpeak = () => {
     var msg = new SpeechSynthesisUtterance();
     msg.text = getSelection(this.props.currentBook.format);
@@ -186,6 +214,7 @@ class PopupOption extends React.Component<PopupOptionProps> {
     }
   };
 
+  //从选中部分开始朗读文字
   handleReadFromHere = () => {
     const text =
       getSelectionSentence(this.props.currentBook.format) ||
@@ -198,19 +227,28 @@ class PopupOption extends React.Component<PopupOptionProps> {
     this.props.handleOpenMenu(false);
   };
 
-  handleAssistant = () => {
-    const text = getSelection(this.props.currentBook.format);
-    if (!text) return;
 
-    this.props.handleQuoteText(text);
-    this.props.handleMenuMode("assistant");
-    this.props.handleOpenMenu(true);
+  //ai助手键
+  handleAssistant = () => {
+    const text = getSelection(this.props.currentBook.format);//拿到当前划选的文本
+    if (!text) return;
+    this.props.handleQuoteText(text);//把选中文字传给父组件，保存待传给 Agent 的文本
+    this.props.handleMenuMode("assistant");//切换菜单模式为 assistant，页面会渲染 AI 助手面板
+    this.props.handleOpenMenu(true);//保持弹窗打开，展示助手界面
+    //为什么 Ctrl + 点击 点不动这几个 props 函数
+    // handleQuoteText、handleMenuMode、handleOpenMenu 不是在当前 PopupMenu 文件定义的函数，是上层父组件通过 props 传下来的回调
   };
 
+  //自定义菜单
   handleOpenPopupOptionDialog = () => {
     this.props.handleOpenMenu(false);
     this.props.handlePopupOptionDialog(true);
   };
+
+
+  //总分发入口
+  //所有 handle 方法，**不直接改页面状态**，而是调用 `this.props.xxx()`
+  //props 是父组件传过来的一堆回调函数，子组件调用回调，**通知父组件改变状态**（打开弹窗、传文本、关闭菜单）
 
   handleOptionClick = (optionKey: PopupOptionKey) => {
     switch (optionKey) {
@@ -249,6 +287,8 @@ class PopupOption extends React.Component<PopupOptionProps> {
     }
   };
 
+  //**返回页面 UI 结构**，用来渲染菜单 DOM
+  //先过滤菜单列表：读取配置，如果用户关闭 AI，就把`assistant`AI 按钮隐藏
   render() {
     const popupOptionKeys = getEnabledPopupOptionKeys().filter((item) => {
       return !(
@@ -302,4 +342,6 @@ class PopupOption extends React.Component<PopupOptionProps> {
   }
 }
 
+//把这个组件导出，别的文件可以 import 引入这个组件。
+// 类比 Java：把这个类`public`，其他包可以 new 这个类；但是前端不是 new，是直接当成 UI 标签使用。
 export default PopupOption;

@@ -6,7 +6,7 @@ import "./assets/styles/style.css";
 import { Provider } from "react-redux";
 import "./i18n";
 import store from "./store";
-import Router from "./router/index";
+import Router from "./router";
 import StyleUtil from "./utils/reader/styleUtil";
 import {
   initSystemFont,

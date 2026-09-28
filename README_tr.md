@@ -1,6 +1,6 @@
 <div align="left">
 
-[简体中文](./README_cn.md) | [हिंदी](./README_hi.md) | [Português](./README_pt.md) | [Indonesian](./README_id.md) | [English](./README.md) | Türkçe
+[简体中文](README_cn.md) | [हिंदी](README_hi.md) | [Português](README_pt.md) | [Indonesian](README_id.md) | [English](README.md) | Türkçe
 
 </div>
 
@@ -196,48 +196,48 @@ yarn ve git'in kurulu olduğundan emin olun
 
 | Dil (A-Z)       | Kod   | Görüntüle                                    |
 | --------------- | ----- | -------------------------------------------- |
-| Almanca         | de    | [Görüntüle](./src/assets/locales/de.json)    |
-| Amharca         | am    | [Görüntüle](./src/assets/locales/am.json)    |
-| Arapça          | ar    | [Görüntüle](./src/assets/locales/ar.json)    |
-| Bengalce        | bn    | [Görüntüle](./src/assets/locales/bn.json)    |
-| Bulgarca        | bg    | [Görüntüle](./src/assets/locales/bg.json)    |
-| Çekçe           | cs    | [Görüntüle](./src/assets/locales/cs.json)    |
-| Çince (CN)      | zh-CN | [Görüntüle](./src/assets/locales/zh-CN.json) |
-| Çince (MO)      | zh-MO | [Görüntüle](./src/assets/locales/zh-MO.json) |
-| Çince (TW)      | zh-TW | [Görüntüle](./src/assets/locales/zh-TW.json) |
-| Danca           | da    | [Görüntüle](./src/assets/locales/da.json)    |
-| Endonezce       | id    | [Görüntüle](./src/assets/locales/id.json)    |
-| Ermenice        | hy    | [Görüntüle](./src/assets/locales/hy.json)    |
-| Farsça          | fa    | [Görüntüle](./src/assets/locales/fa.json)    |
-| Fince           | fi    | [Görüntüle](./src/assets/locales/fi.json)    |
-| Fransızca       | fr    | [Görüntüle](./src/assets/locales/fr.json)    |
-| Hintçe          | hi    | [Görüntüle](./src/assets/locales/hi.json)    |
-| İngilizce       | en    | [Görüntüle](./src/assets/locales/en.json)    |
-| İrlandaca       | ga    | [Görüntüle](./src/assets/locales/ga.json)    |
-| İspanyolca      | es    | [Görüntüle](./src/assets/locales/es.json)    |
-| İsveççe         | sv    | [Görüntüle](./src/assets/locales/sv.json)    |
-| İtalyanca       | it    | [Görüntüle](./src/assets/locales/it.json)    |
-| İnterlingue     | ie    | [Görüntüle](./src/assets/locales/ie.json)    |
-| Japonca         | ja    | [Görüntüle](./src/assets/locales/ja.json)    |
-| Korece          | ko    | [Görüntüle](./src/assets/locales/ko.json)    |
-| Lehçe           | pl    | [Görüntüle](./src/assets/locales/pl.json)    |
-| Macarca         | hu    | [Görüntüle](./src/assets/locales/hu.json)    |
-| Portekizce      | pt    | [Görüntüle](./src/assets/locales/pt.json)    |
-| Portekizce (BR) | pt-BR | [Görüntüle](./src/assets/locales/pt-BR.json) |
-| Romence         | ro    | [Görüntüle](./src/assets/locales/ro.json)    |
-| Rusça           | ru    | [Görüntüle](./src/assets/locales/ru.json)    |
-| Slovence        | sl    | [Görüntüle](./src/assets/locales/sl.json)    |
-| Tagalogca       | tl    | [Görüntüle](./src/assets/locales/tl.json)    |
-| Tamilce         | ta    | [Görüntüle](./src/assets/locales/ta.json)    |
-| Tayca           | th    | [Görüntüle](./src/assets/locales/th.json)    |
-| Tibetçe         | bo    | [Görüntüle](./src/assets/locales/bo.json)    |
-| Türkçe          | tr    | [Görüntüle](./src/assets/locales/tr.json)    |
-| Ukraynaca       | uk    | [Görüntüle](./src/assets/locales/uk.json)    |
-| Vietnamca       | vi    | [Görüntüle](./src/assets/locales/vi.json)    |
-| Yunanca         | el    | [Görüntüle](./src/assets/locales/el.json)    |
+| Almanca         | de    | [Görüntüle](src/assets/locales/de.json)    |
+| Amharca         | am    | [Görüntüle](src/assets/locales/am.json)    |
+| Arapça          | ar    | [Görüntüle](src/assets/locales/ar.json)    |
+| Bengalce        | bn    | [Görüntüle](src/assets/locales/bn.json)    |
+| Bulgarca        | bg    | [Görüntüle](src/assets/locales/bg.json)    |
+| Çekçe           | cs    | [Görüntüle](src/assets/locales/cs.json)    |
+| Çince (CN)      | zh-CN | [Görüntüle](src/assets/locales/zh-CN.json) |
+| Çince (MO)      | zh-MO | [Görüntüle](src/assets/locales/zh-MO.json) |
+| Çince (TW)      | zh-TW | [Görüntüle](src/assets/locales/zh-TW.json) |
+| Danca           | da    | [Görüntüle](src/assets/locales/da.json)    |
+| Endonezce       | id    | [Görüntüle](src/assets/locales/id.json)    |
+| Ermenice        | hy    | [Görüntüle](src/assets/locales/hy.json)    |
+| Farsça          | fa    | [Görüntüle](src/assets/locales/fa.json)    |
+| Fince           | fi    | [Görüntüle](src/assets/locales/fi.json)    |
+| Fransızca       | fr    | [Görüntüle](src/assets/locales/fr.json)    |
+| Hintçe          | hi    | [Görüntüle](src/assets/locales/hi.json)    |
+| İngilizce       | en    | [Görüntüle](src/assets/locales/en.json)    |
+| İrlandaca       | ga    | [Görüntüle](src/assets/locales/ga.json)    |
+| İspanyolca      | es    | [Görüntüle](src/assets/locales/es.json)    |
+| İsveççe         | sv    | [Görüntüle](src/assets/locales/sv.json)    |
+| İtalyanca       | it    | [Görüntüle](src/assets/locales/it.json)    |
+| İnterlingue     | ie    | [Görüntüle](src/assets/locales/ie.json)    |
+| Japonca         | ja    | [Görüntüle](src/assets/locales/ja.json)    |
+| Korece          | ko    | [Görüntüle](src/assets/locales/ko.json)    |
+| Lehçe           | pl    | [Görüntüle](src/assets/locales/pl.json)    |
+| Macarca         | hu    | [Görüntüle](src/assets/locales/hu.json)    |
+| Portekizce      | pt    | [Görüntüle](src/assets/locales/pt.json)    |
+| Portekizce (BR) | pt-BR | [Görüntüle](src/assets/locales/pt-BR.json) |
+| Romence         | ro    | [Görüntüle](src/assets/locales/ro.json)    |
+| Rusça           | ru    | [Görüntüle](src/assets/locales/ru.json)    |
+| Slovence        | sl    | [Görüntüle](src/assets/locales/sl.json)    |
+| Tagalogca       | tl    | [Görüntüle](src/assets/locales/tl.json)    |
+| Tamilce         | ta    | [Görüntüle](src/assets/locales/ta.json)    |
+| Tayca           | th    | [Görüntüle](src/assets/locales/th.json)    |
+| Tibetçe         | bo    | [Görüntüle](src/assets/locales/bo.json)    |
+| Türkçe          | tr    | [Görüntüle](src/assets/locales/tr.json)    |
+| Ukraynaca       | uk    | [Görüntüle](src/assets/locales/uk.json)    |
+| Vietnamca       | vi    | [Görüntüle](src/assets/locales/vi.json)    |
+| Yunanca         | el    | [Görüntüle](src/assets/locales/el.json)    |
 
 ### Yeni dil ekleme
 
-1. Hedef dilinizi yukarıdaki listede bulamazsanız, İngilizce kaynak dosyasını [bu bağlantıdan](./src/assets/locales/en.json) indirin.
+1. Hedef dilinizi yukarıdaki listede bulamazsanız, İngilizce kaynak dosyasını [bu bağlantıdan](src/assets/locales/en.json) indirin.
 
 2. Çeviriyi tamamladığınızda, kaynak dosyayı [bu bağlantıya](https://github.com/koodo-reader/koodo-reader/issues/new?assignees=&labels=submit+translation&projects=&template=submit_translation.yml) gönderin. Pull request de memnuniyetle karşılanır.
