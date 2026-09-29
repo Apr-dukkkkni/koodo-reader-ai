@@ -1,3 +1,17 @@
 server:
   address: 127.0.0.1
   port: 8080
+
+llm:
+  api-key: ${DEEPSEEK_API_KEY}
+  base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+  model: qwen-plus   # 注意：百炼的模型名通常是 qwen-plus 或 qwen-max，不是 qwen3.7-plus
+  timeout-seconds: 30
+
+spring:
+  datasource:
+    url: jdbc:sqlite:data/agent_memory.db
+    driver-class-name: org.sqlite.JDBC
+  sql:
+    init:
+      mode: always # 确保每次启动都执行 schema.sql

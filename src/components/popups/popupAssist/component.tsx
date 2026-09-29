@@ -13,7 +13,7 @@ import toast from "react-hot-toast";
 import { saveAs } from "file-saver";
 import { getAnswerStream } from "../../../utils/request/reader";
 //import { chatStream } from "../../../utils/request/common";
-import { askAgent } from "../../../utils/request/agent";
+import { askAgent, sendFeedback, FeedbackRating } from "../../../utils/request/agent";
 import { marked } from "marked";
 import { sampleQuestion } from "../../../constants/settingList";
 class PopupAssist extends React.Component<PopupAssistProps, PopupAssistState> {
@@ -26,6 +26,7 @@ class PopupAssist extends React.Component<PopupAssistProps, PopupAssistState> {
   constructor(props: PopupAssistProps) {
     super(props);
     this.state = {
+      selectedTerm: "",
       answer: "",
       aiService: ConfigService.getReaderConfig("aiService") || "",
       isAddNew: false,
@@ -135,15 +136,19 @@ class PopupAssist extends React.Component<PopupAssistProps, PopupAssistState> {
   componentDidMount(): void {
     this.loadChatHistory();
     if (this.props.quoteText) {
-      this.setState({ inputQuestion: this.props.quoteText + "\n" }, () => {
-        this.autoResizeTextarea();
-        const el = this.textareaRef.current;
-        if (el) {
-          el.focus();
-          const len = el.value.length;
-          el.setSelectionRange(len, len);
+      this.setState(
+        {
+          selectedTerm: this.props.quoteText,
+          inputQuestion: "",
+        },
+        () => {
+          const el = this.textareaRef.current;
+          if (el) {
+            el.focus();
+          }
         }
-      });
+      );
+
       this.props.handleQuoteText("");
     }
     if (!this.state.aiService) {
@@ -227,33 +232,29 @@ class PopupAssist extends React.Component<PopupAssistProps, PopupAssistState> {
     }
   };
   async handleAnswer() {
-    let originalText =
-      this.state.mode === "ask"
-        ? this.props.originalText
-            .replace(/(\r\n|\n|\r)/gm, "")
-            .replace(/-/gm, "")
-            // Remove common garbage characters
-            .replace(
-              /[^\x20-\x7E\u00A0-\u00FF\u0100-\u017F\u4E00-\u9FFF\u3000-\u303F]/g,
-              ""
-            )
-            // Remove consecutive spaces
-            .replace(/\s{2,}/g, " ")
-            .trim()
-        : "";
-    // if (
-    //   (!ConfigService.getReaderConfig("aiService") ||
-    //     this.props.plugins.findIndex(
-    //       (item) => item.key === ConfigService.getReaderConfig("aiService")
-    //     ) === -1) &&
-    //   !this.props.isAuthed
-    // ) {
-    //   this.setState({ isAddNew: true });
-    // }
-    if (this.state.mode === "ask" && !originalText) {
-      originalText = await this.props.htmlBook.rendition.chapterText();
+    let contextText = "";
+
+    // Ask 模式下，先尝试使用 Koodo 原来的 originalText
+    if (this.state.mode === "ask" && this.props.originalText) {
+      contextText = this.props.originalText
+        .replace(/(\r\n|\n|\r)/gm, "")
+        .replace(/-/gm, "")
+        .replace(
+          /[^\x20-\x7E\u00A0-\u00FF\u0100-\u017F\u4E00-\u9FFF\u3000-\u303F]/g,
+          ""
+        )
+        .replace(/\s{2,}/g, " ")
+        .trim();
     }
-    this.handleDoAnswer(originalText);
+
+    // 没拿到上下文，就退回当前章节正文
+    if (!contextText && this.props.htmlBook?.rendition) {
+      contextText = await this.props.htmlBook.rendition.chapterText();
+    }
+
+    console.log("handleAnswer contextText =", contextText);
+
+    this.handleDoAnswer(contextText);
   }
   // handleDoAnswer = async (text: string) => {
   //   try {
@@ -431,8 +432,14 @@ class PopupAssist extends React.Component<PopupAssistProps, PopupAssistState> {
   //   }
   // };
   handleDoAnswer = async (text: string) => {
+    this.setState({ isWaiting: true });
     try {
+      console.log("Day3 context text =", text);
+
       const currentQuestion = this.state.question?.trim();
+      console.log("send term =", this.state.selectedTerm);
+      console.log("send context =", text);
+
 
       if (!currentQuestion) {
         this.setState({ isWaiting: false });
@@ -440,10 +447,12 @@ class PopupAssist extends React.Component<PopupAssistProps, PopupAssistState> {
       }
 
       const result = await askAgent({
+        term: this.state.selectedTerm,
         question: currentQuestion,
-        context: this.state.mode === "ask" ? text : "",
+        context: text || "",//可以用的上下文，优先是originalText，没有划词就是chapterText()
         bookId: this.props.currentBook?.key || "",
         bookTitle: this.props.currentBook?.name || "",
+        cfi:"",
       });
 
       const finalAnswer =
@@ -460,6 +469,7 @@ class PopupAssist extends React.Component<PopupAssistProps, PopupAssistState> {
             {
               role: "assistant",
               content: finalAnswer,
+              qaId: result.qaId,
             },
           ],
           answer: "",
@@ -473,6 +483,7 @@ class PopupAssist extends React.Component<PopupAssistProps, PopupAssistState> {
             {
               role: "assistant",
               content: finalAnswer,
+              qaId: result.qaId,
             },
           ],
           answer: "",
@@ -487,16 +498,36 @@ class PopupAssist extends React.Component<PopupAssistProps, PopupAssistState> {
     } catch (error) {
       console.error("Agent request failed:", error);
 
-      toast.error(
+      const errorMessage =
         this.props.t("Error happened") +
         ": " +
-        (error instanceof Error ? error.message : String(error))
-      );
+        (error instanceof Error ? error.message : String(error));
 
-      this.setState({
-        answer: this.props.t("Error happened"),
-        isWaiting: false,
-      });
+      toast.error(errorMessage);
+
+      const errorContent = `⚠️ Agent 请求失败\n\n${errorMessage}`;
+
+      if (this.state.mode === "ask") {
+        this.setState({
+          askHistory: [
+            ...this.state.askHistory,
+            { role: "assistant", content: errorContent },
+          ],
+          answer: "",
+          question: "",
+          isWaiting: false,
+        });
+      } else {
+        this.setState({
+          chatHistory: [
+            ...this.state.chatHistory,
+            { role: "assistant", content: errorContent },
+          ],
+          answer: "",
+          question: "",
+          isWaiting: false,
+        });
+      }
     }
   };
   handleChangeAiService = (aiService: string) => {
@@ -530,6 +561,15 @@ class PopupAssist extends React.Component<PopupAssistProps, PopupAssistState> {
       toast.success(this.props.t("Copied"));
     });
   };
+  handleSendFeedback = async (qaId: string, rating: FeedbackRating) => {
+    try {
+      await sendFeedback({ qaId, rating });
+      toast.success("感谢反馈");
+    } catch (error) {
+      console.error("sendFeedback failed:", error);
+      toast.error("反馈发送失败");
+    }
+  };
   handleRenderHistoryMessage = (message: any[]) => {
     return message.map((item, index) => {
       return (
@@ -555,6 +595,38 @@ class PopupAssist extends React.Component<PopupAssistProps, PopupAssistState> {
               onClick={() => this.handleCopyAnswer(item.content)}
             >
               <span className="icon-copy-line"></span>
+            </div>
+          )}
+          {item.role === "assistant" && item.qaId && (
+            <div
+              style={{
+                display: "flex",
+                gap: "8px",
+                marginTop: "6px",
+                fontSize: "12px",
+              }}
+            >
+              {(
+                [
+                  ["TOO_SHALLOW", "太浅"],
+                  ["JUST_RIGHT", "刚好"],
+                  ["TOO_DEEP", "太深"],
+                ] as [FeedbackRating, string][]
+              ).map(([rating, label]) => (
+                <span
+                  key={rating}
+                  style={{
+                    cursor: "pointer",
+                    padding: "2px 8px",
+                    border: "1px solid #ccc",
+                    borderRadius: "10px",
+                    userSelect: "none",
+                  }}
+                  onClick={() => this.handleSendFeedback(item.qaId, rating)}
+                >
+                  {label}
+                </span>
+              ))}
             </div>
           )}
         </div>

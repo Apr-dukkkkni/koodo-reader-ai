@@ -3,6 +3,7 @@ import BookModel from "../../../models/Book";
 export type AiChatMessage = {
   role: "user" | "assistant";
   content: string;
+  qaId?: String;
 };
 export interface PopupAssistProps {
   currentBook: BookModel;
@@ -21,6 +22,7 @@ export interface PopupAssistProps {
   t: (title: string) => string;
 }
 export interface PopupAssistState {
+  selectedTerm: string;
   aiService: string;
   isAddNew: boolean;
   isWaiting: boolean;
