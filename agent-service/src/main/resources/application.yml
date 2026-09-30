@@ -15,3 +15,55 @@ spring:
   sql:
     init:
       mode: always # 确保每次启动都执行 schema.sql
+
+#给你的 Koodo 项目里的大模型增加实时上网查资料能力
+tavily:
+  base-url: https://api.tavily.com
+  api-key: ${TAVILY_API_KEY}
+  max-results: 5
+  search-depth: basic
+  timeout-seconds: 20
+  proxy:
+    enabled: false
+    host: 127.0.0.1
+    port: 7898
+    type: socks5
+
+agent:
+  max-tool-calls: 4
+  max-web-search-rounds: 2
+  max-sources: 5
+  source-max-chars: 6000
+  fetch-timeout-seconds: 20
+  fetch-max-body-kb: 1024      # 1MB
+
+  domain-policy:
+    tier-a:
+      - wikipedia.org
+      - baike.baidu.com
+      - zgbk.com
+      - guoxue.com
+      - gov.cn
+      - edu.cn
+      - museum
+      - cssn.cn            # ← 新增：中国社科院，权威学术
+      - wochmoc.org.cn     # ← 新增：世界文化遗产监测平台，官方机构
+      - fcipub.org         # ← 新增：学术期刊
+      # 以后加到这，不改代码
+    tier-b:
+      - zhihu.com
+      - cnki.net
+      - douban.com
+      - thepaper.cn
+      - gmw.cn             # ← 新增：光明网，正规媒体
+      - sohu.com           # ← 新增：搜狐，门户网站
+      - gmw.cn          # 光明网
+      - sohu.com        # 搜狐
+      - bjnews.com.cn   # 新京报
+      - cbbr.com.cn     # 中国出版传媒商报
+
+    blocked:
+      - csdn.net
+      - jianshu.com
+      - 51cto.com
+      - xueqiu.com      # 雪球（放 B 也行，放 C 也行）
