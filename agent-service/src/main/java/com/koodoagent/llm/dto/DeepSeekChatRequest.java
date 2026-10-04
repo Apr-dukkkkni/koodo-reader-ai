@@ -15,4 +15,5 @@ public record DeepSeekChatRequest(
 ){
     public record Message(String role,String content){}
     public record ResponseFormat(String type) {}
+
 }

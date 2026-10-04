@@ -19,7 +19,15 @@ class DomainPolicyTest {
                 List.of("zhihu.com"),
                 List.of("csdn.net")
         );
-        AgentProperties props = new AgentProperties(4, 2, 5, 6000, cfg);
+        AgentProperties props = new AgentProperties(
+                4,      // maxToolCalls
+                2,      // maxWebSearchRounds
+                5,      // maxSources
+                6000,   // sourceMaxChars
+                20,     // fetchTimeoutSeconds
+                1024,   // fetchMaxBodyKb
+                cfg     // domainPolicy
+        );
         policy = new DomainPolicy(props);
     }
 

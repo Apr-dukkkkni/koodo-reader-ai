@@ -62,4 +62,53 @@ public class DeepSeekClient {
             throw new AgentException("A003", "模型调用失败: " + e.getMessage());
         }
     }
+
+    public DeepSeekResult chat(String systemPrompt, String userPrompt) {
+        List<DeepSeekChatRequest.Message> messages = List.of(
+                new DeepSeekChatRequest.Message("system", systemPrompt),
+                new DeepSeekChatRequest.Message("user", userPrompt)
+        );
+        return chat(messages);
+    }
+
+    public DeepSeekResult chatPlain(String systemPrompt, String userPrompt) {
+        List<DeepSeekChatRequest.Message> messages = List.of(
+                new DeepSeekChatRequest.Message("system", systemPrompt),
+                new DeepSeekChatRequest.Message("user", userPrompt)
+        );
+
+        DeepSeekChatRequest request = new DeepSeekChatRequest(
+                props.model(),
+                messages,
+                false,
+                0.3,
+                null          // ← 不强制 JSON
+        );
+
+        try {
+            DeepSeekChatResponse response = webClient.post()
+                    .uri("/chat/completions")
+                    .bodyValue(request)
+                    .retrieve()
+                    .bodyToMono(DeepSeekChatResponse.class)
+                    .block(Duration.ofSeconds(props.timeoutSeconds()));
+
+            if (response == null || response.choices() == null || response.choices().isEmpty()) {
+                throw new IllegalStateException("DeepSeek 返回为空");
+            }
+
+            String content = response.choices().get(0).message().content();
+            int inputTokens = response.usage() != null ? response.usage().promptTokens() : 0;
+            int outputTokens = response.usage() != null ? response.usage().completionTokens() : 0;
+
+            return new DeepSeekResult(content, inputTokens, outputTokens);
+
+        } catch (Exception e) {
+            if (e.getCause() instanceof java.util.concurrent.TimeoutException) {
+                throw new AgentException("A001", "模型响应超时，请稍后重试");
+            }
+            throw new AgentException("A003", "模型调用失败: " + e.getMessage());
+        }
+    }
+
 }

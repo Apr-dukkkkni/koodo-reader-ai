@@ -3,6 +3,8 @@ package com.koodoagent.exception;
 public class AgentException extends RuntimeException {
     private final String code;
 
+
+
     public AgentException(String code, String message) {
         super(message);
         this.code = code;
