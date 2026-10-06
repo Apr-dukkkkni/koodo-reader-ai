@@ -13,7 +13,7 @@ import java.util.List;
 @Component
 public class DeepSeekClient {
 
-    private final WebClient webClient;
+    private final WebClient webClient;        //调用配置好的KPI的对象
     private final DeepSeekProperties props;
 
     public DeepSeekClient(WebClient deepSeekWebClient, DeepSeekProperties props) {

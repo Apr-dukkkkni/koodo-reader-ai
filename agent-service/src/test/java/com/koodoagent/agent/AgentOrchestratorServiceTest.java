@@ -1,5 +1,7 @@
 package com.koodoagent.agent;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.koodoagent.config.AgentProperties;
 import com.koodoagent.dto.*;
@@ -7,6 +9,7 @@ import com.koodoagent.llm.DeepSeekClient;
 import com.koodoagent.llm.DeepSeekResult;
 import com.koodoagent.llm.PromptBuilder;
 import com.koodoagent.llm.QueryRewriteService;
+import com.koodoagent.memory.BookRagService;
 import com.koodoagent.memory.MemoryService;
 import com.koodoagent.memory.ProfileService;
 import com.koodoagent.persistence.QaHistoryRepository;
@@ -33,7 +36,7 @@ class AgentOrchestratorServiceTest {
     private QueryRewriteService queryRewriteService;
     private AgentProperties agentProperties;
     private ProfileService profileService;
-
+    private BookRagService bookRagService;
     private AgentOrchestratorService service;
 
     @BeforeEach
@@ -48,7 +51,7 @@ class AgentOrchestratorServiceTest {
         memoryService = mock(MemoryService.class);
         evidenceJudgerService = mock(EvidenceJudgerService.class);
         queryRewriteService = mock(QueryRewriteService.class);
-
+        bookRagService = mock(BookRagService.class);
         // 用真实 AgentProperties（简单 record，直接构造）
         agentProperties = new AgentProperties(
                 4,     // maxToolCalls
@@ -65,7 +68,8 @@ class AgentOrchestratorServiceTest {
                 queryRouterService, webSearchService, promptBuilder,
                 deepSeekClient, outputValidator, qaHistoryRepository,
                 objectMapper, memoryService, evidenceJudgerService,
-                queryRewriteService, agentProperties, profileService
+                queryRewriteService, agentProperties, profileService,
+                bookRagService
         );
     }
 
@@ -203,5 +207,82 @@ class AgentOrchestratorServiceTest {
 
         // 上限 = 2 次，不会搜第三次
         verify(webSearchService, times(2)).searchAsEvidence(anyString());
+    }
+
+    @Test
+    void bookRagRouteShouldCallBookRagService() {
+        when(queryRouterService.route(any(), any(), any()))
+                .thenReturn(new RouteDecisionDTO(AgentRoute.BOOK_RAG, false, true, false, "test"));
+        when(bookRagService.searchAsEvidence(anyString(), any(), anyString()))
+                .thenReturn(List.of(new Evidence("B1", EvidenceType.BOOK, "t", "c", "", "book:x", 3)));
+        when(promptBuilder.buildSystemPrompt(anyInt())).thenReturn("sys");
+        when(promptBuilder.buildUserPrompt(any(), any(), any(), any())).thenReturn("user");
+        when(deepSeekClient.chat(anyString(), anyString()))
+                .thenReturn(new DeepSeekResult(validJson(), 10, 20));
+        when(outputValidator.validateAndResolve(any(), any())).thenReturn(List.of());
+
+        AskRequest req = new AskRequest("term", "书里怎么说的", "ctx", "book-x", "title", "cfi");
+        AgentAnswer ans = service.ask(req);
+
+        verify(bookRagService).searchAsEvidence(eq("book-x"), any(), anyString());
+        verify(webSearchService, never()).searchAsEvidence(anyString());
+        assertEquals(AgentRoute.BOOK_RAG, ans.route());
+    }
+
+    @Test
+    void bookRagShouldFallbackToDirectWhenNoBookId() {
+        when(queryRouterService.route(any(), any(), any()))
+                .thenReturn(new RouteDecisionDTO(AgentRoute.BOOK_RAG, false, true, false, "test"));
+        when(promptBuilder.buildSystemPrompt(anyInt())).thenReturn("sys");
+        when(promptBuilder.buildDirectUserPrompt(any(), any(), any())).thenReturn("user");
+        when(deepSeekClient.chat(anyString(), anyString()))
+                .thenReturn(new DeepSeekResult(validJson(), 10, 20));
+
+        AskRequest req = new AskRequest("term", "书里怎么说的", "ctx", null, "title", "cfi");
+        AgentAnswer ans = service.ask(req);
+
+        verify(bookRagService, never()).searchAsEvidence(any(), any(), anyString());
+        assertEquals(AgentRoute.DIRECT, ans.route());
+    }
+
+    @Test
+    void hybridShouldCallBothServices() {
+        when(queryRouterService.route(any(), any(), any()))
+                .thenReturn(new RouteDecisionDTO(AgentRoute.HYBRID, false, true, true, "test"));
+        when(bookRagService.searchAsEvidence(anyString(), any(), anyString()))
+                .thenReturn(List.of(new Evidence("B1", EvidenceType.BOOK, "t", "c", "", "book:x", 3)));
+        when(webSearchService.searchAsEvidence(anyString()))
+                .thenReturn(List.of(new Evidence("S1", EvidenceType.WEB, "t", "c",
+                        "https://x", "x.com", 3)));
+        when(promptBuilder.buildSystemPrompt(anyInt())).thenReturn("sys");
+        when(promptBuilder.buildUserPrompt(any(), any(), any(), any())).thenReturn("user");
+        when(deepSeekClient.chat(anyString(), anyString()))
+                .thenReturn(new DeepSeekResult(validJson(), 10, 20));
+        when(outputValidator.validateAndResolve(any(), any())).thenReturn(List.of());
+
+        AskRequest req = new AskRequest("term", "书里和史料一致吗", "ctx", "book-x", "title", "cfi");
+        AgentAnswer ans = service.ask(req);
+
+        verify(bookRagService).searchAsEvidence(eq("book-x"), any(), anyString());
+        verify(webSearchService).searchAsEvidence(anyString());
+        assertEquals(AgentRoute.HYBRID, ans.route());
+    }
+
+    @Test
+    void hybridShouldFallbackToWebWhenNoBookId() {
+        when(queryRouterService.route(any(), any(), any()))
+                .thenReturn(new RouteDecisionDTO(AgentRoute.HYBRID, false, true, true, "test"));
+        when(webSearchService.searchAsEvidence(anyString())).thenReturn(List.of());
+        when(promptBuilder.buildSystemPrompt(anyInt())).thenReturn("sys");
+        when(promptBuilder.buildUserPrompt(any(), any(), any(), any())).thenReturn("user");
+        when(deepSeekClient.chat(anyString(), anyString()))
+                .thenReturn(new DeepSeekResult(validJson(), 10, 20));
+        when(outputValidator.validateAndResolve(any(), any())).thenReturn(List.of());
+
+        AskRequest req = new AskRequest("term", "书里和史料一致吗", "ctx", null, "title", "cfi");
+        AgentAnswer ans = service.ask(req);
+
+        verify(bookRagService, never()).searchAsEvidence(any(), any(), anyString());
+        assertEquals(AgentRoute.WEB, ans.route());
     }
 }

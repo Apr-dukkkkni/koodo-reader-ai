@@ -12,24 +12,24 @@ CREATE TABLE IF NOT EXISTS qa_history (
                                           input_tokens INTEGER DEFAULT 0,
                                           output_tokens INTEGER DEFAULT 0,
                                           latency_ms INTEGER DEFAULT 0,
-                                          created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                                          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-
 CREATE TABLE IF NOT EXISTS concept_profile (
-                                               id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                               id SERIAL PRIMARY KEY,
                                                concept_name TEXT NOT NULL UNIQUE,
                                                familiarity_level INTEGER NOT NULL DEFAULT 0,
                                                ask_count INTEGER NOT NULL DEFAULT 0,
                                                too_shallow_count INTEGER NOT NULL DEFAULT 0,
                                                just_right_count INTEGER NOT NULL DEFAULT 0,
                                                too_deep_count INTEGER NOT NULL DEFAULT 0,
-                                               last_seen DATETIME
+                                               last_seen TIMESTAMP
 );
+
 CREATE TABLE IF NOT EXISTS feedback (
-                                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                        id SERIAL PRIMARY KEY,
                                         qa_id TEXT NOT NULL,
                                         rating TEXT NOT NULL,
                                         comment TEXT,
-                                        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

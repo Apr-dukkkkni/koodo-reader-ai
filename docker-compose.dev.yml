@@ -1,0 +1,21 @@
+services:
+  pgvector:
+    image: pgvector/pgvector:pg16
+    container_name: koodo-pgvector
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: koodo
+      POSTGRES_PASSWORD: koodo_dev
+      POSTGRES_DB: koodo_rag
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgvector-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U koodo -d koodo_rag"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgvector-data:

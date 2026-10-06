@@ -1,3 +1,9 @@
+pgvector:
+  url: jdbc:postgresql://127.0.0.1:5433/koodo_rag
+  username: koodo
+  password: koodo_dev
+  driver-class-name: org.postgresql.Driver
+
 server:
   address: 127.0.0.1
   port: 8080
@@ -16,6 +22,8 @@ spring:
     init:
       mode: always # 确保每次启动都执行 schema.sql
       schema-locations: classpath:schema.sql
+
+
 
 logging:
   level:
