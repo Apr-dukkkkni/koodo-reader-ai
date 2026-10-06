@@ -1,0 +1,244 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 532676608 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3732), pid=2952, tid=23432
+#
+# JRE version:  (21.0.12.1+1) (build )
+# Java VM: OpenJDK 64-Bit Server VM (21.0.12.1+1-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dnet.bytebuddy.agent.attacher.dump= net.bytebuddy.agent.Attacher com.sun.tools.attach.VirtualMachine 4432 E:\maven-repository\net\bytebuddy\byte-buddy-agent\1.14.19\byte-buddy-agent-1.14.19.jar false 
+
+Host: 12th Gen Intel(R) Core(TM) i5-12400, 12 cores, 31G,  Windows 11 , 64 bit Build 22621 (10.0.22621.317)
+Time: Tue Oct  6 19:50:09 2026 elapsed time: 0.018718 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001de705a32e0):  JavaThread "Unknown thread" [_thread_in_vm, id=23432, stack(0x000000946bb00000,0x000000946bc00000) (1024K)]
+
+Stack: [0x000000946bb00000,0x000000946bc00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6d83e9]
+V  [jvm.dll+0x8b5736]
+V  [jvm.dll+0x8b7cee]
+V  [jvm.dll+0x8b83d3]
+V  [jvm.dll+0x284596]
+V  [jvm.dll+0x6d4d05]
+V  [jvm.dll+0x6c898a]
+V  [jvm.dll+0x35f2f8]
+V  [jvm.dll+0x366f36]
+V  [jvm.dll+0x3b804e]
+V  [jvm.dll+0x3b82f8]
+V  [jvm.dll+0x33320c]
+V  [jvm.dll+0x333d61]
+V  [jvm.dll+0x87f6eb]
+V  [jvm.dll+0x3c4fd1]
+V  [jvm.dll+0x868905]
+V  [jvm.dll+0x458071]
+V  [jvm.dll+0x459c61]
+C  [jli.dll+0x52dc]
+C  [ucrtbase.dll+0x29363]
+C  [KERNEL32.DLL+0x1244d]
+C  [ntdll.dll+0x5df78]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffe7fe9b208, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x000001de7289e810 WorkerThread "GC Thread#0"                     [id=15492, stack(0x000000946bc00000,0x000000946bd00000) (1024K)]
+  0x000001de728ac0a0 ConcurrentGCThread "G1 Main Marker"            [id=26488, stack(0x000000946bd00000,0x000000946be00000) (1024K)]
+  0x000001de728aca50 WorkerThread "G1 Conc#0"                       [id=25124, stack(0x000000946be00000,0x000000946bf00000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe7f595b97]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffe7ff0f6b0] Heap_lock - owner thread: 0x000001de705a32e0
+
+Heap address: 0x0000000606800000, size: 8088 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 32 size 80 Howl #buckets 8 coarsen threshold 7372 Howl Bitmap #cards 1024 size 144 coarsen threshold 921 Card regions per heap region 1 cards per card region 8192
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000606800000, 0x0000000800000000)
+  region size 4096K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe7f981d49]
+GC Heap History (0 events):
+No events
+
+Dll operation events (2 events):
+Event: 0.015 Attempting to load shared library E:\work\tool\bin\java.dll
+Event: 0.016 Loaded shared library E:\work\tool\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff761460000 - 0x00007ff76146e000 	E:\work\tool\bin\java.exe
+0x00007fff62370000 - 0x00007fff62584000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007fff60b20000 - 0x00007fff60be2000 	C:\Windows\System32\KERNEL32.DLL
+0x00007fff5fbb0000 - 0x00007fff5ff4c000 	C:\Windows\System32\KERNELBASE.dll
+0x00007fff61770000 - 0x00007fff6181e000 	C:\Windows\System32\ADVAPI32.DLL
+0x00007fff60980000 - 0x00007fff60a27000 	C:\Windows\System32\msvcrt.dll
+0x00007fff62280000 - 0x00007fff62324000 	C:\Windows\System32\sechost.dll
+0x00007fff618e0000 - 0x00007fff619f5000 	C:\Windows\System32\RPCRT4.dll
+0x00007fff5fff0000 - 0x00007fff60101000 	C:\Windows\System32\ucrtbase.dll
+0x00007fff535b0000 - 0x00007fff535c8000 	E:\work\tool\bin\jli.dll
+0x00007fff4f080000 - 0x00007fff4f09e000 	E:\work\tool\bin\VCRUNTIME140.dll
+0x00007fff61a00000 - 0x00007fff61bab000 	C:\Windows\System32\USER32.dll
+0x00007fff5f7b0000 - 0x00007fff5f7d6000 	C:\Windows\System32\win32u.dll
+0x00007fff61820000 - 0x00007fff61849000 	C:\Windows\System32\GDI32.dll
+0x00007fff5f860000 - 0x00007fff5f972000 	C:\Windows\System32\gdi32full.dll
+0x00007fff5ff50000 - 0x00007fff5ffea000 	C:\Windows\System32\msvcp_win.dll
+0x00007fff4edb0000 - 0x00007fff4f03e000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.317_none_a9434687c10c9fa2\COMCTL32.dll
+0x00007fff61e50000 - 0x00007fff61e81000 	C:\Windows\System32\IMM32.DLL
+0x00007fff58550000 - 0x00007fff5855c000 	E:\work\tool\bin\vcruntime140_1.dll
+0x00007fff11480000 - 0x00007fff1150d000 	E:\work\tool\bin\msvcp140.dll
+0x00007ffe7f250000 - 0x00007ffe7fff2000 	E:\work\tool\bin\server\jvm.dll
+0x00007fff60d40000 - 0x00007fff60db1000 	C:\Windows\System32\WS2_32.dll
+0x00007fff5e6a0000 - 0x00007fff5e6ed000 	C:\Windows\SYSTEM32\POWRPROF.dll
+0x00007fff55e70000 - 0x00007fff55ea4000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007fff59bb0000 - 0x00007fff59bba000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007fff5e680000 - 0x00007fff5e693000 	C:\Windows\SYSTEM32\UMPDC.dll
+0x00007fff5e880000 - 0x00007fff5e898000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007fff58500000 - 0x00007fff5850a000 	E:\work\tool\bin\jimage.dll
+0x00007fff5d090000 - 0x00007fff5d2be000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007fff61ef0000 - 0x00007fff62279000 	C:\Windows\System32\combase.dll
+0x00007fff60a40000 - 0x00007fff60b17000 	C:\Windows\System32\OLEAUT32.dll
+0x00007fff53860000 - 0x00007fff53892000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007fff5f7e0000 - 0x00007fff5f85b000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007fff4cee0000 - 0x00007fff4cf00000 	E:\work\tool\bin\java.dll
+
+JVMTI agents: none
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;E:\work\tool\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.317_none_a9434687c10c9fa2;E:\work\tool\bin\server
+
+VM Arguments:
+jvm_args: -Dnet.bytebuddy.agent.attacher.dump= 
+java_command: net.bytebuddy.agent.Attacher com.sun.tools.attach.VirtualMachine 4432 E:\maven-repository\net\bytebuddy\byte-buddy-agent\1.14.19\byte-buddy-agent-1.14.19.jar false 
+java_class_path (initial): E:\maven-repository\net\bytebuddy\byte-buddy-agent\1.14.19\byte-buddy-agent-1.14.19.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 4194304                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 532676608                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 8480882688                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 4194304                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 8480882688                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Release file:
+<release file has not been read>
+Environment Variables:
+JAVA_HOME=E:\work\tool
+PATH=E:\work\tool\bin;C:\ProgramData\miniconda3;C:\ProgramData\miniconda3\Library\mingw-w64\bin;C:\ProgramData\miniconda3\Library\usr\bin;C:\ProgramData\miniconda3\Library\bin;C:\ProgramData\miniconda3\Scripts;C:\ProgramData\miniconda3\bin;C:\ProgramData\miniconda3\condabin;E:\work\tool\bin;C:\Python314\Scripts;C:\Python314;E:\apache-maven-3.9.14\bin;E:\CODE\jdk\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;D:\Program Files\MATLAB\R2021b\runtime\win64;D:\Program Files\MATLAB\R2021b\bin;D:\cursor\resources\app\bin;C:\ProgramData\miniconda3;C:\ProgramData\miniconda3\Scripts;C:\ProgramData\miniconda3\Library\bin;E:\CODE\app\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Server 9.6\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet;E:\CODE\app\Git\cmd;C:\Program Files\WSL;E:\work\tool\go\bin;C:\Users\Administrator\AppData\Local\Author Software\nvm;C:\Users\Administrator\AppData\Local\Author Software\nvm\.nodejs;C:\Users\Administrator\AppData\Local\Programs\Python\Launcher;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;E:\CODE\app\IntelliJ IDEA 2025.3.3\bin;D:\Microsoft VS Code\MinGWW64\ucrt64\bin;D:\PyCharm 2025.2.4\bin;C:\Users\Administrator\AppData\Local\Pandoc;C:\Users\Administrator\AppData\Local\Programs\DockerDesktop\resources\bin;C:\Users\Administrator\go\bin;E:\CODE\code\koodo-reader-ai\node_modules\.bin
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 151 Stepping 5, GenuineIntel
+TMP=C:\Users\Administrator\AppData\Local\Temp
+TEMP=C:\Users\Administrator\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.317)
+OS uptime: 0 days 22:25 hours
+Hyper-V role detected
+
+CPU: total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 151 stepping 5 microcode 0x32, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, clwb, hv, serialize, rdtscp, rdpid, fsrm, f16c, cet_ibt, cet_ss
+Processor Information for the first 12 processors :
+  Max Mhz: 2500, Current Mhz: 2500, Mhz Limit: 2500
+
+Memory: 4k page, system-wide physical 32343M (10615M free)
+TotalPageFile size 35633M (AvailPageFile size 403M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 65M, peak: 573M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.12.1+1-LTS) for windows-amd64 JRE (21.0.12.1+1-LTS), built on 2026-08-18T00:00:00Z by "admin" with MS VC++ 17.12 (VS2022)
+
+END.

@@ -21,6 +21,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.function.Function;
 
 
 import java.util.*;
@@ -49,6 +50,11 @@ public class AgentOrchestratorService {
 
 
 
+
+    record ParsedLlmResult(
+            LlmRawAnswer raw,
+            DeepSeekResult llmResult
+    ) {}
 
     public AgentAnswer ask(AskRequest request) {
         AgentContext ctx = new AgentContext(agentProperties);
@@ -102,15 +108,18 @@ public class AgentOrchestratorService {
         String userPrompt = promptBuilder.buildUserPrompt(
                 request.term(), request.question(), request.context(), evidences);
 
-        DeepSeekResult llmResult = deepSeekClient.chat(systemPrompt, userPrompt);
+        DeepSeekResult llmResult =
+                deepSeekClient.chat(systemPrompt, userPrompt);
 
-        LlmRawAnswer raw;
-        try {
-            raw = parseLlmAnswer(llmResult.content());
-        } catch (AgentException firstFailure) {
-            raw = retryParse(qaId, systemPrompt, userPrompt, firstFailure);
-            // retryParse 内部如果还失败会抛 A002
-        }
+        ParsedLlmResult parsed = parseWithRetry(
+                qaId,
+                systemPrompt,
+                userPrompt,
+                llmResult
+        );
+
+        LlmRawAnswer raw = parsed.raw();
+        llmResult = parsed.llmResult();
 
         List<SourceDTO> sources = outputValidator.validateAndResolve(raw.sourceIds(), evidences);
         List<String> validatedSourceIds = sources.stream()
@@ -140,6 +149,8 @@ public class AgentOrchestratorService {
                                      RouteDecisionDTO decision,
                                      long start,
                                      AgentContext ctx) {
+
+
         String query = buildSearchQuery(request.term(), request.question());
         List<Evidence> allEvidence = new ArrayList<>();
 
@@ -176,29 +187,32 @@ public class AgentOrchestratorService {
         String userPrompt = promptBuilder.buildUserPrompt(
                 request.term(), request.question(), request.context(), allEvidence);
 
-        DeepSeekResult llmResult = deepSeekClient.chat(systemPrompt, userPrompt);
+        DeepSeekResult llmResult =
+                deepSeekClient.chat(systemPrompt, userPrompt);
 
-        LlmRawAnswer raw;
-        try {
-            raw = parseLlmAnswer(llmResult.content());
-        } catch (AgentException firstFailure) {
-            raw = retryParse(qaId, systemPrompt, userPrompt, firstFailure);
-        }
+        ParsedLlmResult parsed = parseWithRetry(
+                qaId,
+                systemPrompt,
+                userPrompt,
+                llmResult
+        );
+
+        LlmRawAnswer raw = parsed.raw();
+        llmResult = parsed.llmResult();
 
         List<SourceDTO> sources = outputValidator.validateAndResolve(raw.sourceIds(), allEvidence);
+
+
         List<String> validatedSourceIds = sources.stream()
                 .map(SourceDTO::sourceId)
                 .toList();
         EvidenceLevel evidenceLevel = computeEvidenceLevel(sources);
 
         long latencyMs = System.currentTimeMillis() - start;
-        long bookCount = sources.stream()
-                .filter(s -> s.sourceId().startsWith("B"))
-                .count();
-        long webCount = sources.stream()
-                .filter(s -> s.sourceId().startsWith("S"))
-                .count();
+        long bookCount = sources.stream().filter(s -> s.sourceId().startsWith("B")).count();
+        long webCount = sources.stream().filter(s -> s.sourceId().startsWith("S")).count();
         log.info("qaId={} Hybrid 最终引用: B={} S={}", qaId, bookCount, webCount);
+
 
         AgentAnswer answer = new AgentAnswer(
                 qaId,
@@ -245,8 +259,18 @@ public class AgentOrchestratorService {
                 request.context()
         );
 
-        DeepSeekResult llmResult = deepSeekClient.chat(systemPrompt, userPrompt);
-        LlmRawAnswer raw = parseLlmAnswer(llmResult.content());
+        DeepSeekResult llmResult =
+                deepSeekClient.chat(systemPrompt, userPrompt);
+
+        ParsedLlmResult parsed = parseWithRetry(
+                qaId,
+                systemPrompt,
+                userPrompt,
+                llmResult
+        );
+
+        LlmRawAnswer raw = parsed.raw();
+        llmResult = parsed.llmResult();
 
         long latencyMs = System.currentTimeMillis() - start;
 
@@ -300,24 +324,18 @@ public class AgentOrchestratorService {
         String userPrompt = promptBuilder.buildUserPrompt(
                 request.term(), request.question(), request.context(), evidences);
 
-        DeepSeekResult llmResult = deepSeekClient.chat(systemPrompt, userPrompt);
+        DeepSeekResult llmResult =
+                deepSeekClient.chat(systemPrompt, userPrompt);
 
-        LlmRawAnswer raw;
-        try {
-            raw = parseLlmAnswer(llmResult.content());
-        } catch (AgentException firstFailure) {
-            String retryPrompt = userPrompt
-                    + "\n\n[CRITICAL] 上一次输出无法解析为 JSON，错误："
-                    + firstFailure.getMessage()
-                    + "\n请只输出合法 JSON，不要任何 Markdown 包裹。";
-            DeepSeekResult retryResult = deepSeekClient.chat(systemPrompt, retryPrompt);
-            try {
-                raw = parseLlmAnswer(retryResult.content());
-            } catch (AgentException secondFailure) {
-                throw new AgentException("A002", "模型输出两次均无法解析为 JSON");
-            }
-            llmResult = retryResult;
-        }
+        ParsedLlmResult parsed = parseWithRetry(
+                qaId,
+                systemPrompt,
+                userPrompt,
+                llmResult
+        );
+
+        LlmRawAnswer raw = parsed.raw();
+        llmResult = parsed.llmResult();
 
         List<SourceDTO> sources = outputValidator.validateAndResolve(raw.sourceIds(), evidences);
         List<String> validatedSourceIds = sources.stream()
@@ -429,24 +447,18 @@ public class AgentOrchestratorService {
                 memories
         );
 
-        DeepSeekResult llmResult = deepSeekClient.chat(systemPrompt, userPrompt);
+        DeepSeekResult llmResult =
+                deepSeekClient.chat(systemPrompt, userPrompt);
 
-        LlmRawAnswer raw;
-        try {
-            raw = parseLlmAnswer(llmResult.content());
-        } catch (AgentException firstFailure) {
-            String retryPrompt = userPrompt
-                    + "\n\n[CRITICAL] 上一次输出无法解析为 JSON，错误："
-                    + firstFailure.getMessage()
-                    + "\n请只输出合法 JSON，不要任何 Markdown 包裹。";
-            DeepSeekResult retryResult = deepSeekClient.chat(systemPrompt, retryPrompt);
-            try {
-                raw = parseLlmAnswer(retryResult.content());
-            } catch (AgentException secondFailure) {
-                throw new AgentException("A002", "模型输出两次均无法解析为 JSON");
-            }
-            llmResult = retryResult;
-        }
+        ParsedLlmResult parsed = parseWithRetry(
+                qaId,
+                systemPrompt,
+                userPrompt,
+                llmResult
+        );
+
+        LlmRawAnswer raw = parsed.raw();
+        llmResult = parsed.llmResult();
 
         List<SourceDTO> sources = outputValidator.validateAndResolve(raw.sourceIds(), memories);
         List<String> validatedSourceIds = sources.stream()
@@ -472,23 +484,69 @@ public class AgentOrchestratorService {
         return answer;
     }
 
-    private LlmRawAnswer retryParse(String qaId,
-                                    String systemPrompt,
-                                    String userPrompt,
-                                    AgentException firstFailure) {
-        log.warn("qaId={} JSON 解析失败，重试一次: {}", qaId, firstFailure.getMessage());
+    private ParsedLlmResult parseWithRetry(
+            String qaId,
+            String systemPrompt,
+            String userPrompt,
+            DeepSeekResult firstResult) {
 
-        String retryPrompt = userPrompt
-                + "\n\n[CRITICAL] 上一次输出无法解析为 JSON，错误："
-                + firstFailure.getMessage()
-                + "\n请只输出合法 JSON，不要任何 Markdown 包裹。";
+        return parseWithRetry(
+                qaId,
+                systemPrompt,
+                userPrompt,
+                firstResult,
+                retryPrompt -> deepSeekClient.chat(
+                        systemPrompt,
+                        retryPrompt
+                )
+        );
+    }
 
-        DeepSeekResult retryResult = deepSeekClient.chat(systemPrompt, retryPrompt);
+    ParsedLlmResult parseWithRetry(
+            String qaId,
+            String systemPrompt,
+            String userPrompt,
+            DeepSeekResult firstResult,
+            Function<String, DeepSeekResult> retryCall) {
+
         try {
-            return parseLlmAnswer(retryResult.content());
-        } catch (AgentException secondFailure) {
-            throw new AgentException("A002", "模型输出两次均无法解析为 JSON");
+            return new ParsedLlmResult(
+                    parseLlmAnswer(firstResult.content()),
+                    firstResult
+            );
+
+        } catch (AgentException firstFailure) {
+
+            log.warn(
+                    "qaId={} JSON 解析失败，重试一次: {}",
+                    qaId,
+                    firstFailure.getMessage()
+            );
+
+            String retryPrompt = userPrompt
+                    + "\n\n[CRITICAL] 上一次输出无法解析为 JSON，错误："
+                    + firstFailure.getMessage()
+                    + "\n请只输出合法 JSON，不要任何 Markdown 包裹。";
+
+            DeepSeekResult retryResult =
+                    retryCall.apply(retryPrompt);
+
+            try {
+                return new ParsedLlmResult(
+                        parseLlmAnswer(retryResult.content()),
+                        retryResult
+                );
+
+            } catch (AgentException secondFailure) {
+
+                throw new AgentException(
+                        "A002",
+                        "模型输出两次均无法解析为 JSON"
+                );
+            }
         }
     }
+
+
 
 }

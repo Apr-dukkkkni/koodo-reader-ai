@@ -19,6 +19,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeoutException;
+import io.netty.channel.ConnectTimeoutException;
+import io.netty.handler.timeout.ReadTimeoutException;
 
 //调用 Tavily 联网搜索的 Java 客户端 Service 类。
 //职责：接收用户的查询字符串，调用 Tavily 联网搜索 API，把第三方返回结果转换成你项目内部统一的List<SearchResult>，并做校验、超时、异常处理。
@@ -53,9 +55,6 @@ public class TavilyClient {
 
     public List<SearchResult> search(String query) {
         String k = props.apiKey();
-        System.out.println("TAVILY key prefix = "
-                + (k == null ? "null" : k.substring(0, Math.min(8, k.length())))
-                + ", length = " + (k == null ? 0 : k.length()));
         if (props.apiKey() == null || props.apiKey().isBlank()) {
             throw new AgentException("A003", "TAVILY_API_KEY 未配置");
         }
@@ -90,14 +89,39 @@ public class TavilyClient {
                     ))
                     .toList();
 
-        } catch (WebClientRequestException e){
-            if(e.getCause() instanceof TimeoutException){
-                throw new AgentException("A003", "Web search timeout");
-            }else{
-                throw new AgentException("A003", "Web search failed: " + e.getMessage());
+        } catch (Exception e) {
+
+            if (isTimeoutException(e)) {
+                throw new AgentException(
+                        "A003",
+                        "Web search timeout"
+                );
             }
-        }catch (Exception e) {
-            throw new AgentException("A003", "Web search failed: " + e.getMessage());
+
+            throw new AgentException(
+                    "A003",
+                    "Web search failed: " + e.getMessage()
+            );
         }
+    }
+
+
+    private boolean isTimeoutException(Throwable e) {
+
+        Throwable current = e;
+
+        while (current != null) {
+
+            if (current instanceof TimeoutException
+                    || current instanceof ReadTimeoutException
+                    || current instanceof ConnectTimeoutException) {
+
+                return true;
+            }
+
+            current = current.getCause();
+        }
+
+        return false;
     }
 }

@@ -1,6 +1,7 @@
 package com.koodoagent.controller;
 
 import com.koodoagent.agent.Evidence;
+import com.koodoagent.dto.SearchTestRequestDTO;
 import com.koodoagent.memory.BookRagService;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,10 +20,9 @@ public class BookSearchTestController {
     }
 
     @PostMapping("/search-test")
-    public Map<String, Object> searchTest(@RequestParam String bookId,
-                                          @RequestParam String query) {
+    public Map<String, Object> searchTest(@RequestBody SearchTestRequestDTO request) {
         List<Evidence> evidences =
-                bookRagService.searchAsEvidence(bookId, "(test)", query);
+                bookRagService.searchAsEvidence(request.getBookId(), "(test)", request.getQuery());
 
         List<Map<String, Object>> items = evidences.stream()
                 .map(e -> {
@@ -40,8 +40,8 @@ public class BookSearchTestController {
                 .toList();
 
         Map<String, Object> result = new LinkedHashMap<>();
-        result.put("bookId", bookId);
-        result.put("query", query);
+        result.put("bookId", request.getBookId());
+        result.put("query",  request.getQuery());
         result.put("hitCount", evidences.size());
         result.put("hits", items);
         return result;

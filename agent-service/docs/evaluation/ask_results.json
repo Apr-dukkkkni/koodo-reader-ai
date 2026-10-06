@@ -1,0 +1,1171 @@
+[
+  {
+    "id": "A01",
+    "category": "A",
+    "expectedRoute": "DIRECT",
+    "expectedEvidenceType": "NONE",
+    "expectedBookKeywords": "",
+    "question": "这句话里的“圣洁”换成白话怎么说？",
+    "term": "圣洁",
+    "response": {
+      "qaId": "f0325d66-258a-4103-987a-c8c701493085",
+      "route": "DIRECT",
+      "term": "圣洁",
+      "oneLine": "这里的“圣洁”指的是极度纯净、毫无世俗欲望的精神境界。",
+      "explanation": "说话人把对她的爱看作一种世俗情感，而他追求的是超越凡俗、不带任何私欲的纯粹精神状态——就像苦修者追求内心绝对干净、不被感情牵动那样。",
+      "keyPoint": "圣洁在此处不是宗教仪式上的洁净，而是指一种排斥人间情感、强调精神绝对纯粹的理想状态。",
+      "sourceIds": [],
+      "sources": [],
+      "evidenceLevel": "LOW",
+      "usage": {
+        "inputTokens": 391,
+        "outputTokens": 111,
+        "latencyMs": 2659
+      }
+    }
+  },
+  {
+    "id": "A02",
+    "category": "A",
+    "expectedRoute": "DIRECT",
+    "expectedEvidenceType": "NONE",
+    "expectedBookKeywords": "",
+    "question": "这里的“克制”具体指什么？",
+    "term": "克制",
+    "response": {
+      "qaId": "114f793a-72c7-4348-80f2-3ed97a58d986",
+      "route": "DIRECT",
+      "term": "克制",
+      "oneLine": "这里的“克制”指压抑自己对爱的渴望或情感表达，不轻易流露、不主动索取。",
+      "explanation": "在句子中，“她越是克制”说明她主动约束自己的情绪反应，比如忍住依赖、不表露脆弱、不索求关注或确认；这种自我约束反而让她产生一种道德或情感上的自我肯定——觉得正因能这样忍耐，才‘配得上’理想中纯粹、高贵或值得珍视的爱。",
+      "keyPoint": "克制=主动压抑情感需求，将其转化为自我价值感的依据",
+      "sourceIds": [],
+      "sources": [],
+      "evidenceLevel": "LOW",
+      "usage": {
+        "inputTokens": 384,
+        "outputTokens": 138,
+        "latencyMs": 3282
+      }
+    }
+  },
+  {
+    "id": "A03",
+    "category": "A",
+    "expectedRoute": "DIRECT",
+    "expectedEvidenceType": "NONE",
+    "expectedBookKeywords": "",
+    "question": "这句话里的“窄门”在当下语境里是什么意思？",
+    "term": "窄门",
+    "response": {
+      "qaId": "b26fc500-2f2a-4f69-b8b3-cd4e1782f7b1",
+      "route": "DIRECT",
+      "term": "窄门",
+      "oneLine": "窄门在这里比喻一个艰难但必须独自穿越的关键抉择或人生转折点。",
+      "explanation": "句子‘他忽然明白，自己一直站在窄门前’用‘窄门’暗示主角意识到自己正面临一个限制性强、不容退缩、需要清醒选择的临界状态——不是物理的门，而是心理或命运上的关键入口，常见于存在主义或成长叙事中，强调孤独、决断与不可逆性。",
+      "keyPoint": "窄门象征个体意识觉醒后直面的核心困境或必经的艰难选择。",
+      "sourceIds": [],
+      "sources": [],
+      "evidenceLevel": "LOW",
+      "usage": {
+        "inputTokens": 389,
+        "outputTokens": 132,
+        "latencyMs": 3292
+      }
+    }
+  },
+  {
+    "id": "A04",
+    "category": "A",
+    "expectedRoute": "DIRECT",
+    "expectedEvidenceType": "NONE",
+    "expectedBookKeywords": "",
+    "question": "作者说“牺牲”时，是让谁牺牲？",
+    "term": "牺牲",
+    "response": {
+      "qaId": "3599fac4-b8a9-4c53-bc17-c5784ca2cfdb",
+      "route": "DIRECT",
+      "term": "牺牲",
+      "oneLine": "她自己在牺牲。",
+      "explanation": "句子中“她把这看作一种牺牲”，主语是“她”，“这”指代前文某个行为或处境；后半句“却不愿承认自己也害怕”，进一步确认主体是她，且牺牲伴随着她的恐惧，说明牺牲者就是她本人。",
+      "keyPoint": "牺牲的主体是‘她’，即说话/叙述中正在付出代价的女性角色。",
+      "sourceIds": [],
+      "sources": [],
+      "evidenceLevel": "LOW",
+      "usage": {
+        "inputTokens": 391,
+        "outputTokens": 110,
+        "latencyMs": 2655
+      }
+    }
+  },
+  {
+    "id": "A05",
+    "category": "A",
+    "expectedRoute": "DIRECT",
+    "expectedEvidenceType": "NONE",
+    "expectedBookKeywords": "",
+    "question": "这里的“世俗”和什么相对？",
+    "term": "世俗",
+    "response": {
+      "qaId": "8614df98-469f-4d0e-a6ab-99b6a7aa990a",
+      "route": "DIRECT",
+      "term": "世俗",
+      "oneLine": "这里的‘世俗’与‘更高的爱’相对。",
+      "explanation": "句子中明确将‘世俗的幸福’和‘更高的爱’并列对比，前者指日常生活中可感、可得的物质或情感满足（如家庭、财富、名声等），后者则指向超越现实、更精神性或理想化的追求，因此二者构成对立关系。",
+      "keyPoint": "世俗指现实世界中的普通幸福；其对立面是文中提出的‘更高的爱’。",
+      "sourceIds": [],
+      "sources": [],
+      "evidenceLevel": "LOW",
+      "usage": {
+        "inputTokens": 383,
+        "outputTokens": 118,
+        "latencyMs": 2857
+      }
+    }
+  },
+  {
+    "id": "A06",
+    "category": "A",
+    "expectedRoute": "DIRECT",
+    "expectedEvidenceType": "NONE",
+    "expectedBookKeywords": "",
+    "question": "这句话里的“配得上”是什么语气？",
+    "term": "配得上",
+    "response": {
+      "qaId": "aa5e629e-9230-4ff1-94f4-b892cba215e7",
+      "route": "DIRECT",
+      "term": "配得上",
+      "oneLine": "这句话里的“配得上”带有自我否定、自卑的语气。",
+      "explanation": "“总觉得自己不配得上这份爱”中，“配得上”不是客观比较，而是主观感受；“总是”说明这种想法反复出现，“觉得”强调是内心信念而非事实，整体流露出对自身价值的怀疑和对爱的不安，属于典型的自卑型自我评价语气。",
+      "keyPoint": "自卑、自我怀疑、主观否定",
+      "sourceIds": [],
+      "sources": [],
+      "evidenceLevel": "LOW",
+      "usage": {
+        "inputTokens": 386,
+        "outputTokens": 113,
+        "latencyMs": 2747
+      }
+    }
+  },
+  {
+    "id": "B01",
+    "category": "B",
+    "expectedRoute": "BOOK_RAG",
+    "expectedEvidenceType": "BOOK",
+    "expectedBookKeywords": "不自知地爱着他;德行不堪一击;对爱的抵抗",
+    "question": "书里前文是怎么描写阿莉莎对爱情的态度？",
+    "term": "阿莉莎",
+    "response": {
+      "qaId": "3bb34d83-082b-4516-8e5b-161945cb9d15",
+      "route": "BOOK_RAG",
+      "term": "阿莉莎",
+      "oneLine": "阿莉莎把爱情看得比世俗婚姻更神圣，宁可牺牲两人在一起的幸福，也不愿让爱沾染一丝杂质或妥协。",
+      "explanation": "她对杰罗姆的爱始终真挚，却主动疏离——在矿场黄昏里说‘你爱上的是一个臆想的形象’，在最后诀别时强调‘从那一天起，就已来不及’，因为她早把爱情升华为一种近乎宗教的纯粹理想，认为现实结合反而会毁掉它。",
+      "keyPoint": "用自我牺牲守护爱情的绝对性，拒绝将爱降格为日常婚姻。",
+      "sourceIds": [
+        "B2",
+        "B4"
+      ],
+      "sources": [
+        {
+          "sourceId": "B2",
+          "title": "text/part0010.html",
+          "url": "",
+          "domain": "book:窄门"
+        },
+        {
+          "sourceId": "B4",
+          "title": "text/part0011.html",
+          "url": "",
+          "domain": "book:窄门"
+        }
+      ],
+      "evidenceLevel": "MEDIUM",
+      "usage": {
+        "inputTokens": 2348,
+        "outputTokens": 152,
+        "latencyMs": 3963
+      }
+    }
+  },
+  {
+    "id": "B02",
+    "category": "B",
+    "expectedRoute": "BOOK_RAG",
+    "expectedEvidenceType": "BOOK",
+    "expectedBookKeywords": "只想配得上她;不苛求更直接地占有她;除了爱情找不到别的意义",
+    "question": "作者前面怎么写杰罗姆对阿莉莎的感情变化？",
+    "term": "杰罗姆",
+    "response": {
+      "qaId": "9e6d4ab2-6307-4496-b0ae-d068528399ac",
+      "route": "BOOK_RAG",
+      "term": "杰罗姆",
+      "oneLine": "杰罗姆对阿莉莎的感情从炽热依恋逐渐变成痛苦挣扎，最终陷入自我克制的煎熬。",
+      "explanation": "故事开始时，杰罗姆满心欢喜、战战兢兢地爱着阿莉莎，连和她说话都紧张；后来收到她婉拒订婚的信，他震惊又伤心；再往后，阿莉莎刻意疏远、反复拒绝，他仍深夜望着她窗灯思念；最后，他明知她用宗教理由推开自己，却只能一边祷告一边强装冷漠，在日记里写下‘我获胜了吗？杰罗姆对我减少了爱意吗？’——爱没减少，只是被压进沉默和苦修里。",
+      "keyPoint": "感情主线是：热烈倾慕 → 震惊受伤 → 执着守候 → 自我压抑",
+      "sourceIds": [
+        "B2",
+        "B3",
+        "B5"
+      ],
+      "sources": [
+        {
+          "sourceId": "B2",
+          "title": "text/part0005.html",
+          "url": "",
+          "domain": "book:窄门"
+        },
+        {
+          "sourceId": "B3",
+          "title": "text/part0006.html",
+          "url": "",
+          "domain": "book:窄门"
+        },
+        {
+          "sourceId": "B5",
+          "title": "text/part0011.html",
+          "url": "",
+          "domain": "book:窄门"
+        }
+      ],
+      "evidenceLevel": "MEDIUM",
+      "usage": {
+        "inputTokens": 2626,
+        "outputTokens": 207,
+        "latencyMs": 5061
+      }
+    }
+  },
+  {
+    "id": "B03",
+    "category": "B",
+    "expectedRoute": "BOOK_RAG",
+    "expectedEvidenceType": "BOOK",
+    "expectedBookKeywords": "阿莉莎牺牲了自己;愿意牺牲自己的幸福;不用我做出牺牲",
+    "question": "书里朱丽叶特这个角色对阿莉莎有什么影响？",
+    "term": "朱丽叶特",
+    "response": {
+      "qaId": "90baa7bd-e6c8-4d68-a376-f5141ed59654",
+      "route": "BOOK_RAG",
+      "term": "朱丽叶特",
+      "oneLine": "朱丽叶特的婚事和幸福生活，让阿莉莎深感痛苦、自我怀疑，并加速了她对尘世之爱的退缩。",
+      "explanation": "朱丽叶特选择嫁给不爱的泰西埃尔，放弃读书弹琴，转而迎合丈夫、操持生意，显得‘幸福’；而阿莉莎目睹这一切，既反对又无力阻止，甚至被迫承认‘婚事可能并不糟糕’。妹妹的世俗选择反衬出阿莉莎对精神纯粹的极端坚持，使她更坚信爱情必须绝对神圣、不容妥协，最终加深她的孤独与自我牺牲倾向。",
+      "keyPoint": "朱丽叶特代表可妥协的世俗幸福，阿莉莎视其为对照与威胁，因而更加封闭内心。",
+      "sourceIds": [
+        "B2",
+        "B3",
+        "B5"
+      ],
+      "sources": [
+        {
+          "sourceId": "B2",
+          "title": "text/part0008.html",
+          "url": "",
+          "domain": "book:窄门"
+        },
+        {
+          "sourceId": "B3",
+          "title": "text/part0008.html",
+          "url": "",
+          "domain": "book:窄门"
+        },
+        {
+          "sourceId": "B5",
+          "title": "text/part0007.html",
+          "url": "",
+          "domain": "book:窄门"
+        }
+      ],
+      "evidenceLevel": "MEDIUM",
+      "usage": {
+        "inputTokens": 2585,
+        "outputTokens": 190,
+        "latencyMs": 4699
+      }
+    }
+  },
+  {
+    "id": "B04",
+    "category": "B",
+    "expectedRoute": "BOOK_RAG",
+    "expectedEvidenceType": "BOOK",
+    "expectedBookKeywords": "延迟幸福;不属于上帝的一切;唯一的主宰",
+    "question": "书里哪些段落体现了阿莉莎的禁欲倾向？",
+    "term": "禁欲",
+    "response": {
+      "qaId": "3581235f-f3c1-4414-831d-68b8fb877dbb",
+      "route": "BOOK_RAG",
+      "term": "禁欲",
+      "oneLine": "阿莉莎的禁欲倾向体现在她主动推迟婚约、用宗教语言压抑爱情、回避亲密接触，并将爱转化为对上帝的献祭。",
+      "explanation": "故事发生在19世纪末法国，主角杰罗姆与表姐阿莉莎相爱，但阿莉莎深受基督教苦修思想影响（如《窄门》书名取自《圣经》‘窄门难进’）。她怕世俗爱情玷污灵魂，于是写信拒绝订婚，说‘等你增长阅历再说’；在日记里向上帝祈祷‘把他给我吧，我会把心献给您’；见面前刻意保持距离，连对话都装作‘冷酷无情’，把爱当作需要克制的欲望而非自然情感。",
+      "keyPoint": "用信仰压制爱情、主动疏离、自我牺牲式克制",
+      "sourceIds": [
+        "B3",
+        "B4"
+      ],
+      "sources": [
+        {
+          "sourceId": "B3",
+          "title": "text/part0006.html",
+          "url": "",
+          "domain": "book:窄门"
+        },
+        {
+          "sourceId": "B4",
+          "title": "text/part0011.html",
+          "url": "",
+          "domain": "book:窄门"
+        }
+      ],
+      "evidenceLevel": "MEDIUM",
+      "usage": {
+        "inputTokens": 2519,
+        "outputTokens": 200,
+        "latencyMs": 4960
+      }
+    }
+  },
+  {
+    "id": "B05",
+    "category": "B",
+    "expectedRoute": "BOOK_RAG",
+    "expectedEvidenceType": "BOOK",
+    "expectedBookKeywords": "小疗养院;疗养院院长;临终那天",
+    "question": "书里结尾是怎么交代阿莉莎命运的？",
+    "term": "结局",
+    "response": {
+      "qaId": "7dce1700-4652-45c3-8acf-d759ddb9102d",
+      "route": "BOOK_RAG",
+      "term": "结局",
+      "oneLine": "阿莉莎最终孤独死去，临终前未与杰罗姆结合，也未留下明确交代。",
+      "explanation": "书中没有直接描写阿莉莎的死亡场景，但通过杰罗姆多年后回忆的语气、她长期隐退不出、信中反复强调‘只有上帝能指引我们俩’、以及结尾处杰罗姆说‘我爱过的那个阿莉莎已不复存在’等细节，暗示她早已病逝且终身未嫁。她的命运以沉默、缺席和消逝收场，呼应书名‘窄门’——象征她为追求精神纯粹而主动关闭尘世幸福之门。",
+      "keyPoint": "阿莉莎未结婚、未再见杰罗姆、悄然离世，结局是自我牺牲式的寂灭。",
+      "sourceIds": [
+        "B1",
+        "B3",
+        "B4"
+      ],
+      "sources": [
+        {
+          "sourceId": "B1",
+          "title": "text/part0005.html",
+          "url": "",
+          "domain": "book:窄门"
+        },
+        {
+          "sourceId": "B3",
+          "title": "text/part0010.html",
+          "url": "",
+          "domain": "book:窄门"
+        },
+        {
+          "sourceId": "B4",
+          "title": "text/part0010.html",
+          "url": "",
+          "domain": "book:窄门"
+        }
+      ],
+      "evidenceLevel": "MEDIUM",
+      "usage": {
+        "inputTokens": 2529,
+        "outputTokens": 193,
+        "latencyMs": 4816
+      }
+    }
+  },
+  {
+    "id": "B06",
+    "category": "B",
+    "expectedRoute": "BOOK_RAG",
+    "expectedEvidenceType": "BOOK",
+    "expectedBookKeywords": "来世的回报;爱情追求的也不是报偿;德行若能与爱情结合",
+    "question": "作者在书中如何描写宗教对爱情的影响？",
+    "term": "宗教",
+    "response": {
+      "qaId": "1a1881ef-2bd7-4b24-9d6e-7237597b4172",
+      "route": "BOOK_RAG",
+      "term": "宗教",
+      "oneLine": "宗教被描写成爱情的对立力量，主角因信仰而主动压抑甚至拒绝爱情。",
+      "explanation": "在《窄门》中，女主角阿莉莎把虔诚信仰当作最高目标，认为真挚的爱情会妨碍灵魂接近上帝；她引用拉布吕耶尔和《圣经》话语，将爱情视为需要克制的诱惑，甚至祈祷‘请答应赐予我力量——好让他别再爱我了’；她相信唯有舍弃尘世之爱，才能达成属灵的完美。",
+      "keyPoint": "信仰导致自我牺牲式的情感压抑，爱情被视作通向神圣之路的障碍。",
+      "sourceIds": [
+        "B1",
+        "B2"
+      ],
+      "sources": [
+        {
+          "sourceId": "B1",
+          "title": "text/part0011.html",
+          "url": "",
+          "domain": "book:窄门"
+        },
+        {
+          "sourceId": "B2",
+          "title": "text/part0010.html",
+          "url": "",
+          "domain": "book:窄门"
+        }
+      ],
+      "evidenceLevel": "MEDIUM",
+      "usage": {
+        "inputTokens": 2322,
+        "outputTokens": 157,
+        "latencyMs": 3900
+      }
+    }
+  },
+  {
+    "id": "C01",
+    "category": "C",
+    "expectedRoute": "WEB",
+    "expectedEvidenceType": "WEB",
+    "expectedBookKeywords": "",
+    "question": "安德烈·纪德是哪一年获得诺贝尔文学奖？",
+    "term": "安德烈·纪德",
+    "response": {
+      "qaId": "43e875a9-7a21-49d9-ad02-2badbda4ac84",
+      "route": "WEB",
+      "term": "安德烈·纪德",
+      "oneLine": "安德烈·纪德于1947年获得诺贝尔文学奖。",
+      "explanation": "1947年，81岁的法国作家安德烈·纪德因‘以对真理的大无畏的热爱和敏锐的心理洞察力表现了人类的问题和处境’而获奖。当时二战刚结束不久，欧洲正努力重建精神价值，纪德一生探索自由、道德与真实自我的冲突，作品如《窄门》《背德者》直面人性困境，契合了战后世界对深刻人文反思的迫切需要。",
+      "keyPoint": "1947年获奖；表彰其对人性真相的勇敢揭示；正值战后精神重建关键期",
+      "sourceIds": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "sources": [
+        {
+          "sourceId": "S1",
+          "title": "安德烈·纪德 - 维基百科，自由的百科全书",
+          "url": "https://zh.wikipedia.org/zh-hans/%E5%AE%89%E5%BE%B7%E7%83%88%C2%B7%E7%B4%80%E5%BE%B7",
+          "domain": "zh.wikipedia.org"
+        },
+        {
+          "sourceId": "S2",
+          "title": "安德烈·纪德 - 漓江出版社",
+          "url": "https://www.lijiangbooks.com/product/48",
+          "domain": "www.lijiangbooks.com"
+        },
+        {
+          "sourceId": "S3",
+          "title": "安德烈·纪德",
+          "url": "http://share1.chaoxing.com/share/mobile/mooc/tocard/88910971?courseId=88898248&name=%E5%AE%89%E5%BE%B7%E7%83%88%C2%B7%E7%BA%AA%E5%BE%B7&code=null&appId=0",
+          "domain": "share1.chaoxing.com"
+        }
+      ],
+      "evidenceLevel": "HIGH",
+      "usage": {
+        "inputTokens": 11422,
+        "outputTokens": 175,
+        "latencyMs": 11779
+      }
+    }
+  },
+  {
+    "id": "C02",
+    "category": "C",
+    "expectedRoute": "WEB",
+    "expectedEvidenceType": "WEB",
+    "expectedBookKeywords": "",
+    "question": "《窄门》这个书名最早出自哪里？",
+    "term": "窄门",
+    "response": {
+      "qaId": "946a9fe4-2792-453d-a3a5-3d4eac926f90",
+      "route": "WEB",
+      "term": "窄门",
+      "oneLine": "《窄门》书名最早出自《圣经·马太福音》第七章第十三、十四节。",
+      "explanation": "耶稣说：'你们要进窄门。因为引到灭亡、那门是宽的、路是大的、进去的人也多；引到永生、那门是窄的、路是小的、找着的人也少。'纪德在1909年写小说时，借用这个比喻——把女主角阿丽莎为追求宗教意义上的‘完美’而拒绝爱情、自我禁锢的人生选择，比作走进一道艰难又孤独的‘窄门’。",
+      "keyPoint": "书名不是纪德原创，而是直接引用《圣经》中耶稣关于人生道路选择的比喻。",
+      "sourceIds": [
+        "S1",
+        "S5"
+      ],
+      "sources": [
+        {
+          "sourceId": "S1",
+          "title": "窄门 - 维基百科，自由的百科全书",
+          "url": "https://zh.wikipedia.org/zh-hans/%E7%AA%84%E9%96%80",
+          "domain": "zh.wikipedia.org"
+        },
+        {
+          "sourceId": "S5",
+          "title": "李后强：为什么成功之路都是窄门？ - 中国白酒金三角",
+          "url": "https://www.baijiutriangle.com/post/li-hou-qiang-wei-shi-yao-cheng-gong-zhi-lu-du-shi-",
+          "domain": "www.baijiutriangle.com"
+        }
+      ],
+      "evidenceLevel": "HIGH",
+      "usage": {
+        "inputTokens": 8413,
+        "outputTokens": 182,
+        "latencyMs": 13686
+      }
+    }
+  },
+  {
+    "id": "C03",
+    "category": "C",
+    "expectedRoute": "WEB",
+    "expectedEvidenceType": "WEB",
+    "expectedBookKeywords": "",
+    "question": "安德烈·纪德的代表作有哪些？",
+    "term": "安德烈·纪德",
+    "response": {
+      "_http_status": 400,
+      "_raw": "{\"code\":\"A003\",\"message\":\"Web search failed: 200 OK from POST https://api.tavily.com/search, but response failed with cause: reactor.netty.http.client.PrematureCloseException: Connection prematurely closed DURING response\",\"requestId\":\"3000ff07-5032-48fc-8c42-03efff2602e1\"}"
+    }
+  },
+  {
+    "id": "C04",
+    "category": "C",
+    "expectedRoute": "WEB",
+    "expectedEvidenceType": "WEB",
+    "expectedBookKeywords": "",
+    "question": "《窄门》在法国文学史上通常怎么被评价？",
+    "term": "法国文学",
+    "response": {
+      "qaId": "bb99bdf4-eea4-4e6c-8895-a80061cd0243",
+      "route": "WEB",
+      "term": "法国文学",
+      "oneLine": "《窄门》被公认为法国文学中探讨精神与信仰冲突的里程碑式作品。",
+      "explanation": "1909年出版时，法国正处在宗教传统与现代思想激烈碰撞的年代。纪德以自己和表姐的真实情感为蓝本，用书信体写了一个表姐弟相爱却因宗教压抑而悲剧收场的故事。它不讲浪漫爱情，而是聚焦人内心‘爱上帝’和‘爱人’的撕裂感，语言克制、情感浓烈，被后世视为法语文学里剖析灵魂最深的作品之一。",
+      "keyPoint": "精神与信仰的内在冲突、自传性、书信体、1909年出版、纪德道德三部曲核心",
+      "sourceIds": [
+        "S1",
+        "S4"
+      ],
+      "sources": [
+        {
+          "sourceId": "S1",
+          "title": "窄门 - 维基百科，自由的百科全书",
+          "url": "https://zh.wikipedia.org/zh-hans/%E7%AA%84%E9%96%80",
+          "domain": "zh.wikipedia.org"
+        },
+        {
+          "sourceId": "S4",
+          "title": "纪德的文学和生命- -道德三部曲评介之二《窄门》1909 | 思羽文集",
+          "url": "http://si-yu.hxwk.org/2014/10/15/%E7%BA%AA%E5%BE%B7%E7%9A%84%E6%96%87%E5%AD%A6%E5%92%8C%E7%94%9F%E5%91%BD-%E9%81%93%E5%BE%B7%E4%B8%89%E9%83%A8%E6%9B%B2%E8%AF%84%E4%BB%8B%E4%B9%8B%E4%BA%8C%E3%80%8A%E7%AA%84%E9%97%A8%E3%80%8B1909",
+          "domain": "si-yu.hxwk.org"
+        }
+      ],
+      "evidenceLevel": "HIGH",
+      "usage": {
+        "inputTokens": 6536,
+        "outputTokens": 182,
+        "latencyMs": 21729
+      }
+    }
+  },
+  {
+    "id": "C05",
+    "category": "C",
+    "expectedRoute": "WEB",
+    "expectedEvidenceType": "WEB",
+    "expectedBookKeywords": "",
+    "question": "禁欲主义在基督教传统中的基本含义是什么？",
+    "term": "禁欲主义",
+    "response": {
+      "qaId": "45b991bc-41d1-4df4-9b8c-63b4c76ed521",
+      "route": "WEB",
+      "term": "禁欲主义",
+      "oneLine": "禁欲主义在基督教传统中，是指为专注侍奉上帝而主动放弃性、享乐等世俗欲望的修行方式。",
+      "explanation": "故事开头：公元3世纪，埃及有个叫安东尼的年轻人，卖掉全部家产，躲进沙漠洞穴，不吃肉、不近女色、整夜祷告——他不是生病或受罚，而是想用这种极端方式‘离上帝更近’。背景是罗马帝国晚期，基督徒刚获合法地位，许多人觉得：世界太混乱、肉体太软弱，只有狠狠克制欲望，才能守住信仰、确保灵魂得救。早期教父如奥古斯丁、耶柔米都推崇这种做法，把禁欲当成‘属灵训练’，甚至认为结婚虽不犯罪，但独身更能专心爱神。",
+      "keyPoint": "为亲近神而自愿克制身体欲望（尤其性欲），视其为更高属灵追求，非因疾病或惩罚。",
+      "sourceIds": [
+        "S1",
+        "S2"
+      ],
+      "sources": [
+        {
+          "sourceId": "S1",
+          "title": "苦修主義 - 维基百科，自由的百科全书",
+          "url": "https://zh.wikipedia.org/wiki/%E8%8B%A6%E4%BF%AE%E4%B8%BB%E7%BE%A9",
+          "domain": "zh.wikipedia.org"
+        },
+        {
+          "sourceId": "S2",
+          "title": "中世纪西欧的宗教禁欲主义_婚姻_圣礼_神学",
+          "url": "https://www.sohu.com/a/913299931_120922448",
+          "domain": "www.sohu.com"
+        }
+      ],
+      "evidenceLevel": "HIGH",
+      "usage": {
+        "inputTokens": 13277,
+        "outputTokens": 225,
+        "latencyMs": 9501
+      }
+    }
+  },
+  {
+    "id": "C06",
+    "category": "C",
+    "expectedRoute": "WEB",
+    "expectedEvidenceType": "WEB",
+    "expectedBookKeywords": "",
+    "question": "纪德获得诺贝尔文学奖的颁奖理由是什么？",
+    "term": "诺贝尔文学奖",
+    "response": {
+      "qaId": "1613b6f8-2e70-4ac1-af74-4a1a66f0a807",
+      "route": "WEB",
+      "term": "诺贝尔文学奖",
+      "oneLine": "纪德因“对真理无畏的热爱和敏锐的心理洞察力，呈现了人性的种种问题与处境”获得1947年诺贝尔文学奖。",
+      "explanation": "1947年，78岁的法国作家安德烈·纪德获诺贝尔文学奖。当时他已是法国文坛领袖，作品如《窄门》《田园交响曲》等深刻探讨道德困境、自我挣扎与真实欲望。瑞典文学院表彰他广博而富艺术性的著作，尤其看重他不回避人性矛盾、敢于直面真理的勇气和精准的心理描写能力。",
+      "keyPoint": "颁奖理由聚焦两点：对真理的大无畏热爱 + 敏锐心理学洞察力；强调其作品揭示人类普遍的问题与处境。",
+      "sourceIds": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "sources": [
+        {
+          "sourceId": "S1",
+          "title": "历年诺贝尔文学奖获得者一览-郑州大学文学院",
+          "url": "https://www5.zzu.edu.cn/arts/info/1042/2811.htm",
+          "domain": "www5.zzu.edu.cn"
+        },
+        {
+          "sourceId": "S2",
+          "title": "安德烈·纪德 - 维基百科，自由的百科全书",
+          "url": "https://zh.wikipedia.org/zh-hans/%E5%AE%89%E5%BE%B7%E7%83%88%C2%B7%E7%B4%80%E5%BE%B7",
+          "domain": "zh.wikipedia.org"
+        },
+        {
+          "sourceId": "S3",
+          "title": "1945年诺贝尔文学奖解密:纪德是如何拿到诺奖的？",
+          "url": "https://m.douban.com/group/topic/312760478",
+          "domain": "m.douban.com"
+        },
+        {
+          "sourceId": "S4",
+          "title": "随笔｜纪德：开端人物_财新周刊频道_财新网",
+          "url": "https://weekly.caixin.com/2019-11-23/101486582.html",
+          "domain": "weekly.caixin.com"
+        }
+      ],
+      "evidenceLevel": "HIGH",
+      "usage": {
+        "inputTokens": 15512,
+        "outputTokens": 192,
+        "latencyMs": 12582
+      }
+    }
+  },
+  {
+    "id": "D01",
+    "category": "D",
+    "expectedRoute": "HYBRID",
+    "expectedEvidenceType": "BOOK+WEB",
+    "expectedBookKeywords": "德行不过是对爱的抵抗;多迷人的诡辩;幸福埋下的蜃景",
+    "question": "作者对阿莉莎禁欲选择的评价，和外部对纪德宗教观的分析一致吗？",
+    "term": "阿莉莎",
+    "response": {
+      "qaId": "dc7d8c94-ff8b-46b8-8940-f2580e8f300e",
+      "route": "HYBRID",
+      "term": "阿莉莎",
+      "oneLine": "作者并未正面评价阿莉莎的禁欲选择，而是通过杰罗姆的困惑、痛苦与不解，呈现这一选择带来的毁灭性后果。",
+      "explanation": "《窄门》以第一人称叙述者杰罗姆的视角展开，全书没有一句作者跳出来评判阿莉莎；所有关于她禁欲行为的描写，都包裹在杰罗姆的回忆、信件与情感震荡中——他不解她的退缩，痛感她的疏离，最终被彻底遗弃。这种叙事策略本身即是一种隐含态度：不加评论，却让禁欲的代价（孤独、误解、死亡）自然浮现。外部分析（如S1、S2）常将阿莉莎解读为宗教迷狂或自我欺骗，但书中原文从未确认这些判断，只忠实记录她反复强调‘责任’、拒绝‘交易式信仰’、轻蔑‘被风压倒的小草式虔诚’等言行。",
+      "keyPoint": "纪德用克制的叙事代替价值判断：阿莉莎的选择是否正确？作者不答；作者只让读者看见——这选择如何一寸寸绞杀爱情与生命。",
+      "sourceIds": [
+        "B1",
+        "B2"
+      ],
+      "sources": [
+        {
+          "sourceId": "B1",
+          "title": "text/part0010.html",
+          "url": "",
+          "domain": "book:窄门"
+        },
+        {
+          "sourceId": "B2",
+          "title": "text/part0010.html",
+          "url": "",
+          "domain": "book:窄门"
+        }
+      ],
+      "evidenceLevel": "HIGH",
+      "usage": {
+        "inputTokens": 9808,
+        "outputTokens": 271,
+        "latencyMs": 17702
+      }
+    }
+  },
+  {
+    "id": "D02",
+    "category": "D",
+    "expectedRoute": "HYBRID",
+    "expectedEvidenceType": "BOOK+WEB",
+    "expectedBookKeywords": "爱情追求的也不是报偿;苦尽甘来的想法;德行不是灵魂的装点",
+    "question": "书里对爱情与信仰冲突的描写，和当时法国宗教背景资料一致吗？",
+    "term": "爱情与信仰",
+    "response": {
+      "qaId": "1c4ff9a2-b9d0-48f9-a913-37b5156da15a",
+      "route": "HYBRID",
+      "term": "爱情与信仰",
+      "oneLine": "《窄门》中爱情与信仰的激烈冲突，真实反映了19世纪末法国天主教保守势力对个人情感的严厉压制。",
+      "explanation": "故事发生在1890年代的法国，当时天主教会影响力仍强，尤其在道德领域。小说里阿莉莎把爱情视为阻碍接近上帝的障碍，反复强调‘德行若能与爱情结合该有多幸福’又立刻否定——这种撕裂感正源于现实：教会推崇禁欲、贬低世俗之爱，认为真爱必须让位于对神的绝对服从。书中她读冉森派著作、引用拉布吕耶尔等道德家文字，都是当时虔诚天主教家庭的真实精神食粮。",
+      "keyPoint": "时代背景是19世纪末法国天主教保守氛围；信仰被表现为对爱情的系统性否定；书中人物的思想挣扎与历史实情高度吻合。",
+      "sourceIds": [
+        "B1",
+        "B4"
+      ],
+      "sources": [
+        {
+          "sourceId": "B1",
+          "title": "text/part0010.html",
+          "url": "",
+          "domain": "book:窄门"
+        },
+        {
+          "sourceId": "B4",
+          "title": "text/part0011.html",
+          "url": "",
+          "domain": "book:窄门"
+        }
+      ],
+      "evidenceLevel": "HIGH",
+      "usage": {
+        "inputTokens": 16499,
+        "outputTokens": 217,
+        "latencyMs": 11789
+      }
+    }
+  },
+  {
+    "id": "D03",
+    "category": "D",
+    "expectedRoute": "HYBRID",
+    "expectedEvidenceType": "BOOK+WEB",
+    "expectedBookKeywords": "只想配得上她;不苛求更直接地占有她;没有其他感情能够以“爱”命名",
+    "question": "书里杰罗姆的爱情观，和纪德本人经历的资料能互相印证吗？",
+    "term": "杰罗姆",
+    "response": {
+      "qaId": "a080582e-115a-4bcc-9b64-9efbaeb9bf6e",
+      "route": "HYBRID",
+      "term": "杰罗姆",
+      "oneLine": "杰罗姆的爱情观是压抑欲望、将爱情神圣化以接近上帝，这与纪德本人压抑同性欲望、用宗教框架自我规训的真实经历高度一致。",
+      "explanation": "《窄门》里杰罗姆把对阿丽莎的爱变成一种苦修：越爱越要远离，把幸福让给‘更高目标’。这正映射纪德的真实人生——他从小受清教徒母亲严管，成年后与表姐玛德莱娜名义结婚却无实质婚姻，内心深爱男性却长期用宗教自责。书中反复出现的‘窄门’‘牺牲’‘德行即灵魂之美’等说法，正是他挣扎时写给自己的精神告白。",
+      "keyPoint": "杰罗姆不是追求世俗爱情的人，而是用爱情当修行工具；纪德写他，就是在写自己如何用信仰包装欲望、又用欲望质疑信仰。",
+      "sourceIds": [
+        "S1",
+        "S2"
+      ],
+      "sources": [
+        {
+          "sourceId": "S1",
+          "title": "安德烈·纪德 - 维基百科，自由的百科全书",
+          "url": "https://zh.wikipedia.org/zh-hans/%E5%AE%89%E5%BE%B7%E7%83%88%C2%B7%E7%B4%80%E5%BE%B7",
+          "domain": "zh.wikipedia.org"
+        },
+        {
+          "sourceId": "S2",
+          "title": "纪德《窄门》——男同写自己的异性恋爱情故事_百科TA说",
+          "url": "https://wapbaike.baidu.com/tashuo/browse/content?id=df6178d64780efbcb21dc4b5",
+          "domain": "wapbaike.baidu.com"
+        }
+      ],
+      "evidenceLevel": "HIGH",
+      "usage": {
+        "inputTokens": 13005,
+        "outputTokens": 220,
+        "latencyMs": 8701
+      }
+    }
+  },
+  {
+    "id": "D04",
+    "category": "D",
+    "expectedRoute": "HYBRID",
+    "expectedEvidenceType": "BOOK+WEB",
+    "expectedBookKeywords": "灵魂没有污点;圣洁的白衣;狭道却通向永生",
+    "question": "书中“圣洁”的含义，和基督教传统里“圣洁”的解释一致吗？",
+    "term": "圣洁",
+    "response": {
+      "qaId": "25c5c5f7-61e0-4e69-aaea-223c99bc67ed",
+      "route": "HYBRID",
+      "term": "圣洁",
+      "oneLine": "《窄门》中的“圣洁”不是基督教传统里那种靠恩典、在爱中成长的圣洁，而是走向自我剥夺、隔绝情感、以苦修换取救赎的极端理解。",
+      "explanation": "用户读的是纪德《窄门》，小说背景是19世纪末法国新教环境。主角阿莉莎深受冉森派和寂静派影响——这些流派强调人性彻底败坏、上帝绝对主权，把圣洁等同于消灭欲望、拒绝尘世之爱（包括对杰罗姆的爱），甚至认为快乐会妨碍灵魂靠近上帝。书中她烧日记、拒婚、苦行自责，都是这种扭曲圣洁观的体现；而正统基督教（如莱尔《圣洁》所言）认为圣洁是圣灵所赐的新生命自然流露，重在爱神爱人，而非靠自我否定赚取恩典。",
+      "keyPoint": "小说中的圣洁=自我消灭；基督教传统圣洁=恩典中活出新生命",
+      "sourceIds": [
+        "B2",
+        "B3",
+        "S1"
+      ],
+      "sources": [
+        {
+          "sourceId": "B2",
+          "title": "text/part0010.html",
+          "url": "",
+          "domain": "book:窄门"
+        },
+        {
+          "sourceId": "B3",
+          "title": "text/part0011.html",
+          "url": "",
+          "domain": "book:窄门"
+        },
+        {
+          "sourceId": "S1",
+          "title": "《圣洁》莱尔 - 灵修生活 - 圣山网论坛：恩典中国的异象 - Powered by Discuz!",
+          "url": "https://www.holymountaincn.org/thread-3566-1-1.html",
+          "domain": "www.holymountaincn.org"
+        }
+      ],
+      "evidenceLevel": "HIGH",
+      "usage": {
+        "inputTokens": 18006,
+        "outputTokens": 248,
+        "latencyMs": 18288
+      }
+    }
+  },
+  {
+    "id": "D05",
+    "category": "D",
+    "expectedRoute": "HYBRID",
+    "expectedEvidenceType": "BOOK+WEB",
+    "expectedBookKeywords": "小疗养院;疗养院院长;跟随灵柩",
+    "question": "书里阿莉莎的结局，和外部对《窄门》主题的解读一致吗？",
+    "term": "结局",
+    "response": {
+      "qaId": "28520b6e-39e7-436a-a7df-60af96de00b0",
+      "route": "HYBRID",
+      "term": "结局",
+      "oneLine": "阿莉莎最终孤独病逝，这与《窄门》主题高度一致：她为追求宗教意义上的绝对纯洁，主动斩断爱情，把‘爱上帝’和‘爱爱人’视为不可并行的窄路。",
+      "explanation": "故事发生在19世纪末法国，一个虔诚信仰与新兴个人意识激烈碰撞的时代。阿莉莎从小目睹母亲私奔、父亲崩溃，从此把世俗爱情看作危险诱惑；她深爱表弟杰罗姆，却坚信两人相爱会阻碍彼此接近上帝——就像牧师布道说的：‘窄门容不下两人并行’。她不是不爱，而是把爱升华为牺牲：拒绝求婚、躲进修道院、靠缝补和读宗教小册子度日，最终身心枯竭而死。外部解读普遍认为，她的结局正是小说核心主题的具象化——极端信仰对人性的窒息。",
+      "keyPoint": "阿莉莎之死不是意外，而是她主动选择的信仰实践：用自我毁灭来成全‘纯粹的爱’。",
+      "sourceIds": [
+        "S1",
+        "S2"
+      ],
+      "sources": [
+        {
+          "sourceId": "S1",
+          "title": "《窄门》真的很窄吗？ - 博客 | 文学城",
+          "url": "https://blog.wenxuecity.com/myblog/9284/202201/3436.html",
+          "domain": "blog.wenxuecity.com"
+        },
+        {
+          "sourceId": "S2",
+          "title": "纪德的文学和生命- -道德三部曲评介之二《窄门》1909 | 思羽文集",
+          "url": "http://si-yu.hxwk.org/2014/10/15/%E7%BA%AA%E5%BE%B7%E7%9A%84%E6%96%87%E5%AD%A6%E5%92%8C%E7%94%9F%E5%91%BD-%E9%81%93%E5%BE%B7%E4%B8%89%E9%83%A8%E6%9B%B2%E8%AF%84%E4%BB%8B%E4%B9%8B%E4%BA%8C%E3%80%8A%E7%AA%84%E9%97%A8%E3%80%8B1909",
+          "domain": "si-yu.hxwk.org"
+        }
+      ],
+      "evidenceLevel": "HIGH",
+      "usage": {
+        "inputTokens": 16011,
+        "outputTokens": 249,
+        "latencyMs": 16878
+      }
+    }
+  },
+  {
+    "id": "D06",
+    "category": "D",
+    "expectedRoute": "HYBRID",
+    "expectedEvidenceType": "BOOK+WEB",
+    "expectedBookKeywords": "延迟幸福;世俗的荣耀;天主的荣耀",
+    "question": "书里对世俗幸福的否定，和纪德其他作品中的观点一致吗？",
+    "term": "世俗幸福",
+    "response": {
+      "qaId": "f7623ea1-cfab-4080-b75e-bfb3763db1fe",
+      "route": "HYBRID",
+      "term": "世俗幸福",
+      "oneLine": "《窄门》中否定世俗幸福，与纪德其他作品（如《背德者》）形成鲜明对照，体现他一贯的矛盾立场：既不肯定也不否定，只呈现两种极端选择的后果。",
+      "explanation": "《窄门》里阿莉莎把爱情、快乐等世俗幸福看作通往神圣的障碍，引用帕斯卡尔的话说‘不属于上帝的一切，无一能满足我的期待’（B5），主动弃绝；而《背德者》主角却追求感官自由，病愈后获得解放却仍不幸福（S1）。纪德从不给出答案，而是用两部小说像天平两端，展示禁欲与纵欲都通向痛苦——这正是他全部创作的核心：暴露人类精神困境，而非提供解决方案。",
+      "keyPoint": "纪德不主张某种幸福观，而是通过对比揭示世俗幸福与精神追求不可调和的张力。",
+      "sourceIds": [
+        "S1",
+        "S2"
+      ],
+      "sources": [
+        {
+          "sourceId": "S1",
+          "title": "纪德《窄门》：是否存在某种真理，可以把人带向幸福之路？--世界文坛--中国作家网",
+          "url": "https://www.chinawriter.com.cn/n1/2021/1125/c404090-32291491.html",
+          "domain": "www.chinawriter.com.cn"
+        },
+        {
+          "sourceId": "S2",
+          "title": "纪德的文学和生命- -道德三部曲评介之二《窄门》1909 | 思羽文集",
+          "url": "http://si-yu.hxwk.org/2014/10/15/%E7%BA%AA%E5%BE%B7%E7%9A%84%E6%96%87%E5%AD%A6%E5%92%8C%E7%94%9F%E5%91%BD-%E9%81%93%E5%BE%B7%E4%B8%89%E9%83%A8%E6%9B%B2%E8%AF%84%E4%BB%8B%E4%B9%8B%E4%BA%8C%E3%80%8A%E7%AA%84%E9%97%A8%E3%80%8B1909",
+          "domain": "si-yu.hxwk.org"
+        }
+      ],
+      "evidenceLevel": "HIGH",
+      "usage": {
+        "inputTokens": 9067,
+        "outputTokens": 220,
+        "latencyMs": 12918
+      }
+    }
+  },
+  {
+    "id": "E01",
+    "category": "E",
+    "expectedRoute": "MEMORY",
+    "expectedEvidenceType": "MEMORY",
+    "expectedBookKeywords": "",
+    "question": "刚才阿莉莎那个再简单讲一下。",
+    "term": "阿莉莎",
+    "response": {
+      "qaId": "1709e8e7-c534-4526-bf74-3e633ac9c12c",
+      "route": "MEMORY",
+      "term": "阿莉莎",
+      "oneLine": "阿莉莎是《窄门》里为守护心中纯粹爱情而拒绝结婚的女主角。",
+      "explanation": "她深爱杰罗姆，却认为世俗婚姻会玷污爱情的神圣性，于是选择独自隐忍、自我牺牲，最终在孤独中早逝。她的行为不是冷漠，而是把爱看得太重，重到宁可毁掉自己也不愿让它妥协。",
+      "keyPoint": "用生命捍卫爱情的绝对纯洁，而非反对爱情本身。",
+      "sourceIds": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "sources": [
+        {
+          "sourceId": "M1",
+          "title": "历史问答：阿莉莎",
+          "url": "",
+          "domain": "memory"
+        },
+        {
+          "sourceId": "M2",
+          "title": "历史问答：阿莉莎",
+          "url": "",
+          "domain": "memory"
+        },
+        {
+          "sourceId": "M3",
+          "title": "历史问答：阿莉莎",
+          "url": "",
+          "domain": "memory"
+        }
+      ],
+      "evidenceLevel": "MEDIUM",
+      "usage": {
+        "inputTokens": 656,
+        "outputTokens": 129,
+        "latencyMs": 3091
+      }
+    }
+  },
+  {
+    "id": "E02",
+    "category": "E",
+    "expectedRoute": "MEMORY",
+    "expectedEvidenceType": "MEMORY",
+    "expectedBookKeywords": "",
+    "question": "之前说的禁欲，按我的水平再解释一遍。",
+    "term": "禁欲",
+    "response": {
+      "qaId": "4660f694-7597-4298-b09f-d625ed2dcfa2",
+      "route": "MEMORY",
+      "term": "禁欲",
+      "oneLine": "禁欲是阿莉莎明明爱得发烫，却亲手把爱情锁进抽屉，连钥匙都扔了。",
+      "explanation": "她不是不爱杰罗姆，而是怕一碰就弄脏这份爱——所以不结婚、不拥抱、不许自己沉溺甜蜜，把全部热情转成祷告和苦修，仿佛爱越纯粹，就越该被藏起来、冻起来、供起来。",
+      "keyPoint": "禁欲=有爱却主动冻结，不是没感觉，是太当真。",
+      "sourceIds": [
+        "M3"
+      ],
+      "sources": [
+        {
+          "sourceId": "M3",
+          "title": "历史问答：禁欲",
+          "url": "",
+          "domain": "memory"
+        }
+      ],
+      "evidenceLevel": "MEDIUM",
+      "usage": {
+        "inputTokens": 633,
+        "outputTokens": 133,
+        "latencyMs": 3182
+      }
+    }
+  },
+  {
+    "id": "E03",
+    "category": "E",
+    "expectedRoute": "MEMORY",
+    "expectedEvidenceType": "MEMORY",
+    "expectedBookKeywords": "",
+    "question": "再简单讲讲圣洁，别讲太深。",
+    "term": "圣洁",
+    "response": {
+      "qaId": "31299263-ab9f-425e-9814-18094fe764dc",
+      "route": "MEMORY",
+      "term": "圣洁",
+      "oneLine": "圣洁在这里就是拼命压抑自己，不许自己有爱、快乐这些普通人的情感。",
+      "explanation": "阿莉莎觉得，只有彻底不要爱情、不要幸福、甚至不要亲密关系，才算够‘干净’、够‘神圣’。这不是靠信仰自然长出来的美好品质，而是靠硬生生掐掉心里的念头来达成的。",
+      "keyPoint": "圣洁=主动掐灭情感，不是天生纯洁，也不是靠爱成长。",
+      "sourceIds": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "sources": [
+        {
+          "sourceId": "M1",
+          "title": "历史问答：圣洁",
+          "url": "",
+          "domain": "memory"
+        },
+        {
+          "sourceId": "M2",
+          "title": "历史问答：圣洁",
+          "url": "",
+          "domain": "memory"
+        },
+        {
+          "sourceId": "M3",
+          "title": "历史问答：圣洁",
+          "url": "",
+          "domain": "memory"
+        }
+      ],
+      "evidenceLevel": "MEDIUM",
+      "usage": {
+        "inputTokens": 645,
+        "outputTokens": 124,
+        "latencyMs": 2980
+      }
+    }
+  },
+  {
+    "id": "E04",
+    "category": "E",
+    "expectedRoute": "MEMORY",
+    "expectedEvidenceType": "MEMORY",
+    "expectedBookKeywords": "",
+    "question": "刚才杰罗姆的部分我没太懂，再讲浅一点。",
+    "term": "杰罗姆",
+    "response": {
+      "qaId": "eb60a144-4eb0-44b6-ae56-f6cad51e1bef",
+      "route": "MEMORY",
+      "term": "杰罗姆",
+      "oneLine": "杰罗姆是《窄门》里那个爱着表姐阿莉莎、却把爱情当苦修功课的年轻男人。",
+      "explanation": "他不是普通恋爱脑，而是越爱越不敢靠近——觉得真爱必须纯洁到不碰世俗欲望，甚至把拒绝亲密当成接近上帝的方式；他写信、等她、守承诺，却在每一步里把自己逼得喘不过气。",
+      "keyPoint": "杰罗姆=深情+自虐+用信仰压住真心的人",
+      "sourceIds": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "sources": [
+        {
+          "sourceId": "M1",
+          "title": "历史问答：杰罗姆",
+          "url": "",
+          "domain": "memory"
+        },
+        {
+          "sourceId": "M2",
+          "title": "历史问答：杰罗姆",
+          "url": "",
+          "domain": "memory"
+        },
+        {
+          "sourceId": "M3",
+          "title": "历史问答：杰罗姆",
+          "url": "",
+          "domain": "memory"
+        }
+      ],
+      "evidenceLevel": "MEDIUM",
+      "usage": {
+        "inputTokens": 662,
+        "outputTokens": 136,
+        "latencyMs": 3284
+      }
+    }
+  },
+  {
+    "id": "E05",
+    "category": "E",
+    "expectedRoute": "MEMORY",
+    "expectedEvidenceType": "MEMORY",
+    "expectedBookKeywords": "",
+    "question": "之前那个宗教对爱情的影响，再简单说一下。",
+    "term": "宗教",
+    "response": {
+      "qaId": "13e0a980-8d00-4835-bde8-73f0d4401053",
+      "route": "MEMORY",
+      "term": "宗教",
+      "oneLine": "宗教在这里像心里一个严厉的裁判，越爱就越觉得该放弃，怕爱情挡了通往上帝的路。",
+      "explanation": "主角把信仰看得极重，认为真正的虔诚必须牺牲世俗情感；爱情越真挚，他越觉得这是对信仰的威胁，于是主动压抑、推开爱人，把放弃爱情当成接近神圣的必经之路。",
+      "keyPoint": "宗教在此是内化的道德审判者，让真挚爱情变成需要主动牺牲的‘错误’。",
+      "sourceIds": [
+        "M3"
+      ],
+      "sources": [
+        {
+          "sourceId": "M3",
+          "title": "历史问答：宗教",
+          "url": "",
+          "domain": "memory"
+        }
+      ],
+      "evidenceLevel": "MEDIUM",
+      "usage": {
+        "inputTokens": 581,
+        "outputTokens": 124,
+        "latencyMs": 2977
+      }
+    }
+  },
+  {
+    "id": "E06",
+    "category": "E",
+    "expectedRoute": "MEMORY",
+    "expectedEvidenceType": "MEMORY",
+    "expectedBookKeywords": "",
+    "question": "刚才“窄门”的含义，再简单讲一遍。",
+    "term": "窄门",
+    "response": {
+      "qaId": "2fc87a31-6d57-4e7c-bd7c-e6ad75e0f6c0",
+      "route": "MEMORY",
+      "term": "窄门",
+      "oneLine": "窄门就是一条又小又难走的路，比喻人为了坚持信仰或原则，必须独自咬牙放弃轻松幸福的选择。",
+      "explanation": "它最早来自《圣经》里耶稣说的话：'你们要进窄门'，意思是真正的成长或救赎不靠随大流、图舒服，而要选那条人少、艰难、需要自我约束的路。在《窄门》这本书里，主角就把爱情、世俗快乐都关在门外，只守着自己认定的精神标准。",
+      "keyPoint": "窄门=艰难但必须独自走的正确选择，核心是主动舍弃容易的幸福，坚持内心认定的高标准。",
+      "sourceIds": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "sources": [
+        {
+          "sourceId": "M1",
+          "title": "历史问答：窄门",
+          "url": "",
+          "domain": "memory"
+        },
+        {
+          "sourceId": "M2",
+          "title": "历史问答：窄门",
+          "url": "",
+          "domain": "memory"
+        },
+        {
+          "sourceId": "M3",
+          "title": "历史问答：窄门",
+          "url": "",
+          "domain": "memory"
+        }
+      ],
+      "evidenceLevel": "MEDIUM",
+      "usage": {
+        "inputTokens": 604,
+        "outputTokens": 169,
+        "latencyMs": 4016
+      }
+    }
+  }
+]
